@@ -1,0 +1,77 @@
+﻿@model MVC_MBQ.Models.EntregaFamilia
+
+@{
+    ViewData["Title"] = "Detalhes de Entrega a Famílias";
+}
+
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>   @Html.ActionLink("PapiApp", "PapiApp", "Home")  >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+
+<h1>Detalhes de Entregas a Famíias</h1>
+
+<div>
+    <h4>Entrega a Familias</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Data de Entrega
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataEntrega)
+        </dd>
+        <dt class="col-sm-2">
+            Nome de Família
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Familia.Nome)
+        </dd>
+    </dl>
+</div>
+
+<table class="table">
+    <caption>Tabela - Lista de Entregas a Famílias</caption>
+    <thead>
+        <tr>
+            <th>
+                Nome de Produto
+            </th>
+            <th>
+                Quantidade
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ProdutoEntregue produtoEntregue in Model.ProdutosEntregues)
+        {
+            <tr>
+                <td>
+                    @produtoEntregue.Produto.NomeProduto
+
+                </td>
+                <td>
+                    @produtoEntregue.Quantidade
+                </td>
+                <td>
+                    <a asp-controller="ProdutosEntregues" asp-action="Edit" asp-route-id="@produtoEntregue.ID">Editar</a>|
+                    <a asp-controller="ProdutosEntregues" asp-action="Details" asp-route-id="@produtoEntregue.ID">Detalhes</a> |
+                    <a asp-controller="ProdutosEntregues" asp-action="Delete" asp-route-id="@produtoEntregue.ID">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+    </div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Editar</a> |
+    <a asp-action="Index"> Voltar a Lista de Entregas</a>
+</div>

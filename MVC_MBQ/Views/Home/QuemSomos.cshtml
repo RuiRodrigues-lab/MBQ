@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Quem Somos";
+}
+
+<ol class="breadcrumb">
+    <li class="active">
+        @Html.ActionLink("Home", "Index", "Home") > @ViewBag.Title
+    </li>
+</ol>
+
+<section>
+    <div class="jumbotron jumbotron-index">
+        <h1 class="text-primary text-light">Quem Somos?</h1>
+        <h4 class="lead text-light">Não somos todos iguais, e por isso mesmo existe a preocupação de ajudar o próximo no que se puder. É nesta base que o Movimento iniciou-se a juntar pessoas, e continua a funcionar alimentando essa união.</h4>
+        <br />
+        <div class=" row">
+            <div class="col-4">
+                <a class="btn btn-outline-light text-capitalize text-light p-2 btn-black" asp-action="Home" asp-controller="TiposDonativos" role="button"><i class="fa fa-heart"></i> Saiba Como Ajudar</a>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-4 align-content-end">
+                <div class="container py-2">
+                    <div class="row">
+                        <div class="input-group col-md-8">
+                            <input class="form-control py-2" type="search" value="Pesquisa" id="example-search-input">
+                            <span class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h4 class="lead text-dark" align="justified">
+            O Movimento Bebé Quentinho (MBQ) emana do Agrupamento 59 em São Sebastião - Setúbal do Corpo Nacional de Escutas (CNE), dele fazendo parte integrante.
+        </h4>
+        <h4 class="lead text-dark" align="justified">
+            O seu âmbito de atuação consiste no apoio às necessidades materiais básicas da criança até aos 6 anos de idade,
+            desenvolvendo e promovendo todas as iniciativas relativas à obtenção e distribuição dos meios necessários à prossecução desse objectivo.
+        </h4>
+
+        <!--Falta inserir aqui um vídeo de apresentação do movimento com gravações do agrupamento e imagens-->
+        <p align="center">
+            <iframe src="https://player.vimeo.com/video/506529108" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </p>
+
+        <h4 class="lead text-dark" align="justified">
+            Os principais meios de angariação do movimento são a contribuição financeira e logística proporcionada pelo Agrupamento 59,
+            o contributo dos padrinhos de coração sensibilizados com o movimento e através de campanhas de angariação de géneros realizadas ao longo do ano junto de várias entidades e população em geral.
+        </h4>
+        <h4 class="lead text-dark" align="justified">
+            O movimento não tem fins lucrativos e visa apenas proporcionar a crianças de famílias carenciadas um pouco mais de conforto e solidariedade.
+        </h4>
+    </div>
+    </div>
+</section>

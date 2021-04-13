@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Enviado";
+}
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>   @Html.ActionLink("PapiApp", "PapiApp", "Home")  >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+<h2>Mensagem enviada com sucesso</h2>

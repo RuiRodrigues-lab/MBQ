@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Contactos";
+}
+
+<ol class="breadcrumb">
+    <li class="active">
+        @Html.ActionLink("Home", "Index", "Home") > @ViewBag.Title
+    </li>
+</ol>
+
+<div class="jumbotron jumbotron-index">
+    <h1 class="text-primary text-light">Movimento Bebé Quentinho?</h1>
+    <h4 class="lead text-light">O Movimento Bebé Quentinho aguarda o seu contacto e a sua visita. Pelos vários meios à disposição estamos disponíveis para receber ou para ajudar. Contacte-nos<i class="fas fa-phone-alt"></i>.</h4>
+    <br />
+    <div class=" row">
+        <div class="col-4">
+            <a class="btn btn-outline-light text-capitalize text-light p-2 btn-black" href="https://www.facebook.com/Movimentobq" target="_blank" title="Link para facebook"><img src="~/imagens/LogoIcoBola.ico" alt="Logotipo Papi"> página oficial</a>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-4 align-content-end">
+            <div class="container py-2">
+                <div class="row">
+                    <div class="input-group col-md-8">
+                        <input class="form-control py-2" type="search" value="Pesquisa" id="example-search-input">
+                        <span class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h1 class="display-4 text-uppercase text-dark"></h1>
+            <strong>Onde Nós Estamos</strong>
+            <iframe src="https://maps.google.com/maps?q=Largo%20S.%20Domingos.%20Igreja%20de%20S%C3%A3o%20Sebasti%C3%A3o&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="500" id="gmap_canvas" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <div class="col-md align-items-center">
+                <h3><b>Contactos</b></h3>
+                <div class="Contacts">
+                    <dl>
+                        <div class="row">
+                            <div class="row text-center bg-danger"></div>
+                            <div class="col bg-warning"></div>
+                        </div>
+                        <dd>
+                            Corpo Nacional de Escutas - - Agrupamento 59 <br />
+                            São Sebastião<br />
+                            Largo S. Domingos. Igreja de São Sebastião <br />
+                            2910-092 Setúbal <br />
+                            Portugal
+                        </dd>
+                        <dd><i class="far fa-envelope"></i> E-Mail: <a href="mailto:movimentobq59@gmail.com">movimentobq59@gmail.com</a> </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="col-md align-items-center">
+                <h5>Redes Sociais</h5>
+                <div id="Redes">
+                    <div class="fa-2x text-center">
+                        <a href="https://www.facebook.com/Movimentobq"><i class="fab fa-facebook"></i></a>
+                        <a href="http://www.instagram.com"><i class="fab fa-instagram"></i> </a>
+                        <a href="mailto:movimentobq59@gmail.com"><i class="fas fa-at"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewData["Title"] = "Tipos Donativo";
+}
+
+<ol class="breadcrumb">
+    <li class="active">
+        @Html.ActionLink("Home", "Index", "Home") > @ViewBag.Title
+    </li>
+</ol>
+
+<section id="Donativos">
+    <div class="jumbotron jumbotron-index">
+        <h1 class="text-primary text-light" align="center">Tipos de donativo</h1>
+        <h4 class="lead text-light"></h4>
+        <br />
+        <div class=" row">
+            <div class="col-4">
+                <a class="btn btn-outline-light text-capitalize text-light p-2 btn-black" asp-action="Home" asp-controller="TiposDonativos" role="button"><i class="fa fa-heart"></i> Saiba Como Ajudar</a>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-4 align-content-end">
+                <div class="container py-2">
+                    <div class="row">
+                        <div class="input-group col-md-8">
+                            <input class="form-control py-2" type="search" value="Pesquisa" id="example-search-input">
+                            <span class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <img class="img-fluid" src="~/imagens/materiaisdoados1.jpg" alt="Fotografia materiais doados">
+                </div>
+            </div>
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5">
+                    <h1>O que pode entregar?</h1>
+                    <p class="lead" style="text-align:justify">
+                        Aceitamos ajuda de todos os que possam e queiram ajudar. Alguns exemplos de donativos incluem:
+                    </p>
+                    <ul>
+                        <li>Donativos de género alimentar como leite, papas e farinha láctea, bolachas;</li>
+                        <li>Donativos de género higiénico como fraldas e toalhetes, direcionados para bebés até ao primeiro ano de idade;</li>
+                        <li>Outro tipo de donativos como roupas, brinquedos e utensílios como chuchas;</li>
+                        <li>Donativos financeiros.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="ComoDoar" class="bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5">
+                    <img class="img-fluid" src="~/imagens/materiaisdoados4.jpg" alt="Fotografia Materiais que são doados">
+                </div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h2>Porque deve doar? Como pode doar?</h2>
+                    <p class="lead" style="text-align:justify">
+                        Visamos sempre tentar chegar às crianças que tenham mais dificuldades ou simplesmente ajudar a providenciar condições melhores aos que mostram necessitar desse apoio extra.<br />
+                        Pode doar combinando por mensagem, ou aos sábados, das 15H às 18H, aquando da reunião de escuteiros na morada dos contactos. As entregas são efetuadas na missa de domingo.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<section id="Campanhas">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <img class="img-fluid" src="~/imagens/eventosRecolha.jpg" alt="Fotografia eventos realizados">
+                </div>
+            </div>
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5">
+                    <h2>Campanhas e eventos de recolha</h2>
+                    <p class="lead" style="text-align:justify">
+                        Temos <a asp-controller="Home" asp-action="CampanhaDonativos">campanhas de recolha de materiais</a> e eventos para sensibilizar mais pessoas perante a causa.<br />
+                        Os donativos podem ser-nos entregues conforme disponibilidade e marcação, ou diretamente à associação paroquial, referenciando o Movimento Bebé Quentinho.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

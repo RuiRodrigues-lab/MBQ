@@ -1,0 +1,43 @@
+﻿@model MVC_MBQ.Models.Categoria
+
+@{
+    ViewData["Title"] = "Nova Categoria";
+}
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>  @Html.ActionLink("PapiApp", "PapiApp", "Home")  >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+<h1>Criar nova Categoria</h1>
+<h2>Todos os campos são de preenchimento obrigatório</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomeCategoria" class="control-label">Nome da Categoria</label>
+                <input asp-for="NomeCategoria" class="form-control" required />
+                <span asp-validation-for="NomeCategoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Adicionar Nova Categoria" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Ver Lista de Categorias</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

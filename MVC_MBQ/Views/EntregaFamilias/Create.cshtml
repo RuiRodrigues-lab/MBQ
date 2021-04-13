@@ -1,0 +1,91 @@
+﻿@model MVC_MBQ.Models.ViewModelNovaEntregaFamilia
+
+@{
+    ViewData["Title"] = "Nova Entrega a Familia";
+}
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>   @Html.ActionLink("PapiApp", "PapiApp", "Home")  >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+
+<h1>Criar novo registo de Entrega</h1>
+<h2>Todos os campos são de preenchimento obrigatório</h2>
+
+<hr />
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-2">
+            <div class="form-group">
+                <label asp-for="@Model.EntregaFamilia.DataEntrega" class="control-label">Data de Entrega:</label>
+                <input type="date" asp-for="@Model.EntregaFamilia.DataEntrega" class="form-control" asp-items="ViewBag.DataEntrega" required />
+
+                <span asp-validation-for="@Model.EntregaFamilia.DataEntrega" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-3">           
+                <div class="form-group">
+                    <label asp-for="@Model.EntregaFamilia.FamiliaID" class="control-label">Entrega a Família:</label>
+                    <select asp-for="@Model.EntregaFamilia.FamiliaID" class="form-control" asp-items="ViewBag.FamiliaID" required>
+                        @foreach (Familia familia in Model.Familias)
+                        {
+                            <option value="@familia.ID">@familia.Nome</option>
+
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        @for (var i = 0; i < Model.EntregaFamilia.ProdutosEntregues.Count; i++)
+        {
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Produto entregue</label>
+                    <select asp-for="@Model.EntregaFamilia.ProdutosEntregues[i].ProdutoID" class="form-control" required>
+                        @foreach (Produto produto in Model.Produtos)
+                        {
+                            <option value="@produto.ID">@produto.NomeProduto</option>
+                        }
+
+                    </select>
+                </div>            
+            
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label asp-for="@Model.EntregaFamilia.ProdutosEntregues[i].Quantidade" class="control-label">Quantidade</label>
+                        <input asp-for="@Model.EntregaFamilia.ProdutosEntregues[i].Quantidade" class="form-control" required />
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+                <div class="form-group">
+                    <input type="submit" value="Registar Entrega" class="btn btn-primary" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" asp-action="AddProdutoEntregue" value="Adicionar Novo Produto" class="btn btn-primary" />
+                </div>
+</form>
+    
+<div>
+    <a asp-action="Index">Voltar a Lista de Entregas</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

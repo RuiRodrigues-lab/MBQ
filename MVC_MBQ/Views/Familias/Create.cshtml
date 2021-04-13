@@ -1,0 +1,52 @@
+﻿@model MVC_MBQ.Models.Familia
+
+@{
+    ViewData["Title"] = "Criar Familia";
+}
+
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>  @Html.ActionLink("PapiApp", "PapiApp", "Home") >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+<h1>Criar nova Família</h1>
+<h2>Todos os campos são de preenchimento obrigatório</h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-3">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label">Nome da Família</label>
+                <input asp-for="Nome" class="form-control" required />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Adicionar Família" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar à página anterior</a>
+</div>
+
+<div>
+    <small>
+        * Ao clicar em criar significa que o titular de dados está a autorizar que os seus dados sejam tratados para as finalidades referidas, tomando conhecimento da Política de Privacidade.
+        No caso de se tratar de dados pessoais de menores de 12 anos apenas se poderá efetuar tratamento no caso de consentimento dado pelo progenitor ou tutor.
+        Caso o titular não autorize utilização dos dados então não será possível realizar o pedido realizado ficando o mesmo sem efeito.
+    </small>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

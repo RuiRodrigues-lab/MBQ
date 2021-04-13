@@ -1,0 +1,37 @@
+﻿@model MVC_MBQ.Models.Familia
+
+@{
+    ViewData["Title"] = "Apagar Familia";
+}
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>   @Html.ActionLink("PapiApp", "PapiApp", "Home") >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+
+<h1>Apagar</h1>
+
+<h2>Apagar família?</h2>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Nome de Família
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Apagar" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar à página anterior</a>
+    </form>
+</div>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MVC_MBQ.Models.Familia>
+
+@{
+    ViewData["Title"] = "Familias";
+}
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>  @Html.ActionLink("PapiApp", "PapiApp", "Home") >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+<h1>Lista de Famílias</h1>
+
+<p>
+    <a asp-action="Create">Adicionar nova família</a>
+</p>
+<table class="table">
+    <caption>Tabela - Lista de Famílias</caption>
+    <thead>
+        <tr>
+            <th>
+                Nome de Família
+            </th>
+            <th class="text-right"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+
+                <td>
+                    <a class="text-right" asp-action="Edit" asp-route-id="@item.ID">Editar</a> |
+                    <a class="text-right" asp-action="Details" asp-route-id="@item.ID">Detalhes</a> |
+                    <a class="text-right" asp-action="Delete" asp-route-id="@item.ID">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,112 @@
+﻿@model IEnumerable<MVC_MBQ.Models.Voluntario>
+
+@{
+    ViewData["Title"] = "Voluntarios";
+}
+
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>   @Html.ActionLink("PapiApp", "PapiApp", "Home") >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+
+<h1>Lista de Voluntarios</h1>
+
+<p>
+    <a asp-action="Create">Adicionar Novo Voluntario</a>
+</p>
+<table class="table">
+    <caption>Tabela - Lista de Voluntários</caption>
+    <thead>
+        <tr>
+            <th>
+                Nome Voluntário
+            </th>
+            <th>
+                Data de Nascimento
+            </th>
+            <th>
+                Morada
+            </th>
+            <th>
+                Cidade
+            </th>
+            <th>
+                Distrito
+            </th>
+            <th>
+                Código Postal
+            </th>
+            <th>
+                Código Postal
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Descrição
+            </th>
+            <th>
+                Consentimento RGPD?
+            </th>
+            <th>
+                Interno?
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            String DataNascimentoFinal = item.DataNascimento.ToShortDateString();
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => DataNascimentoFinal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Morada)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Distrito)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Postal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ConsentimentoRGPD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Interno)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

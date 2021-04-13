@@ -1,0 +1,60 @@
+﻿@model IEnumerable<MVC_MBQ.Models.Doacao>
+
+@{
+    ViewData["Title"] = "Donativos";
+}
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:> @Html.ActionLink("PapiApp", "PapiApp", "Home")  > @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+<h1>Lista de donativos</h1>
+
+<p>
+    <a asp-action="Create">Adicionar doações</a>
+</p>
+<table class="table">
+    <caption>Tabela - Lista de Doações</caption>
+    <thead>
+        <tr>
+            <th>
+                Data de Doação
+            </th>
+            <th>
+                Nome de Evento
+            </th>
+            <th>
+                Nome de Voluntário
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataDoacao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Evento.NomeEvento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Voluntario.Nome)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

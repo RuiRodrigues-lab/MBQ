@@ -1,0 +1,80 @@
+﻿@model MVC_MBQ.Models.Doacao
+
+@{
+    ViewData["Title"] = "Detalhes da Doação";
+}
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>   @Html.ActionLink("PapiApp", "PapiApp", "Home") >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+
+<h1>Detalhes da doação</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Data de Doação
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataDoacao)
+        </dd>
+        <dt class="col-sm-2">
+            Nome de Evento
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Evento.NomeEvento)
+        </dd>
+        <dt class="col-sm-2">
+            Nome de Voluntário
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Voluntario.Nome)
+        </dd>
+    </dl>
+
+    <table class="table">
+        <caption>Tabela - Lista de Doações</caption>
+        <thead>
+            <tr>
+                <th>
+                    Nome de Produto
+                </th>
+                <th>
+                    Quantidade
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ProdutoDoado produtoDoado in Model.ProdutosDoados)
+            {
+                <tr>
+                    <td>
+                        @produtoDoado.Produto.NomeProduto
+
+                    </td>
+                    <td>
+                        @produtoDoado.Quantidade
+                    </td>
+                    <td>
+                        <a asp-controller="ProdutosDoados" asp-action="Edit" asp-route-id="@produtoDoado.ID">Editar</a>|
+                        <a asp-controller="ProdutosDoados" asp-action="Details" asp-route-id="@produtoDoado.ID">Detalhes</a> |
+                        <a asp-controller="ProdutosDoados" asp-action="Delete" asp-route-id="@produtoDoado.ID">Apagar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Editar</a> |
+    <a asp-action="Index">Voltar a Lista de Doações</a>
+</div>

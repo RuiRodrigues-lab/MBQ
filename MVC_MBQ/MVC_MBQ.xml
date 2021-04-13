@@ -1,0 +1,2003 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MVC_MBQ</name>
+    </assembly>
+    <members>
+        <member name="T:MVC_MBQ.Controllers.AccountController">
+            <summary>
+            Controller relativo à autenticação através de facebook.
+            Fornece/Implementa todos os métodos relativos autenticação por facebook
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.AccountController.FacebookLogin">
+            <summary>
+            Método para fazer log in através de Facebook
+            </summary>
+            <returns> Devolve página de autenticação pelo log in</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.AccountController.FacebookResponse">
+            <summary>
+            Método de resposta de Facebook após log in 
+            </summary>
+            <returns>Devolve JSON result decorrente de autenticação realizada em Facebook</returns>
+        </member>
+        <member name="T:MVC_MBQ.Controllers.AdminController">
+            <summary>
+            Classe AdminController
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.AdminController.Index">
+            <summary>
+            Método que devolve view com lista de  utilizadores
+            </summary>
+            <returns>View com utilizadores</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.AdminController.Update(System.String)">
+            <summary>
+            Método para atualizar Utilizador
+            </summary>
+            <param name="id">id de utilizador</param>
+            <returns></returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.AdminController.Update(System.String,System.String,System.String)">
+            <summary>
+            Método Post de utilizador atualizado
+            </summary>
+            <param name="id">Id de utilizador atualizado</param>
+            <param name="email">novo email inserido</param>
+            <param name="password">nova password inserida</param>
+            <returns></returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.AdminController.Delete(System.String)">
+            <summary>
+            Método que apaga utilizador.
+            </summary>
+            <param name="id">id de utilizador a apagar.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.AdminController.Errors(Microsoft.AspNetCore.Identity.IdentityResult)">
+            <summary>
+            Método para demonstrar erros
+            </summary>
+            <param name="result">Resultado obtido do tipo IdentityResult</param>
+        </member>
+        <member name="T:MVC_MBQ.Controllers.CategoriasController">
+            <summary>
+            Controller relativo ao Modelo Categorias.
+            Fornece/Implementa todos os métodos relativos a acções CRUD
+            </summary>
+        </member>
+        <member name="F:MVC_MBQ.Controllers.CategoriasController._context">
+            <value>
+            Variável local do tipo AppMovimentoBQDbContext
+            </value>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.CategoriasController.#ctor(MVC_MBQ.Models.AppMovimentoBQDbContext)">
+            <summary>
+            Método que cria variável local e cujo objeto AppMovimentoBDQContext lhe é atribuído
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.CategoriasController.Index">
+            <summary>
+            Método da view Index referente ao modelo Categorias
+            </summary>
+            <returns>devolve view com lista de Categorias presentes em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.CategoriasController.Details(System.Nullable{System.Int32})">
+            <summary>
+            Método que permite ler todos os detalhes de objeto da classe Categoria, selecionado em view, cujos dados estão guardados em BD 
+            </summary>
+            <param name="id">ID do objeto da classe Categoria guardado em BD</param>
+            <returns>devolve view com todos os detalhes de um ID selecionado presente em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.CategoriasController.Create">
+            <summary>
+            Método que devolve a view Create do modelo Categoria
+            </summary>
+            <returns>devolve view com formulário para criar o objeto da classe Categoria</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.CategoriasController.Create(MVC_MBQ.Models.Categoria)">
+            <summary>
+             POST: Categorias/Create
+             Método que adiciona objeto Categoria criado na BD
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="categoria">objeto  da classe Categoria criado no Formulário</param>
+            <returns>View Create com o objeto criado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.CategoriasController.Edit(System.Nullable{System.Int32})">
+            <summary>
+             Método que devolve a view Editar do objeto seleccionado da classe Categoria que se encontra em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para editar</param>
+            <returns>devolve view com formulário para editar o objeto selecionado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.CategoriasController.Edit(System.Int32,MVC_MBQ.Models.Categoria)">
+            <summary>
+             POST: Categorias/Edit
+             Método que edita objeto Categoria criado na BD e atualiza a BD
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="id">id de objeto a ser alterado</param>
+            <param name="categoria">objeto  da classe Categoria editado no Formulário</param>
+            <returns>View edit com o objeto editado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.CategoriasController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            Método que devolve a view Delete com objeto da classe Categoria selecionado e guardado em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar</param>
+            <returns>devolve view com formulário para apagar o objeto selecionado da classe Categoria</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.CategoriasController.DeleteConfirmed(System.Int32)">
+            <summary>
+            Método que apaga objeto selecionado e atualiza a BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar </param>
+            <returns>devolve view Index</returns>
+        </member>
+        <member name="T:MVC_MBQ.Controllers.DoacaosController">
+            <summary>
+            Controller relativo ao Modelo Doacao.
+            Fornece/Implementa todos os métodos relativos a acções CRUD
+            </summary>
+        </member>
+        <member name="F:MVC_MBQ.Controllers.DoacaosController._context">
+            <value>
+            Variável local do tipo AppMovimentoBQDbContext
+            </value>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.DoacaosController.#ctor(MVC_MBQ.Models.AppMovimentoBQDbContext)">
+            <summary>
+            Método que atribui o objeto da classe AppMovimentoBDQContext a variável local
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.DoacaosController.Index">
+            <summary>
+            Método da view Index referente ao modelo Doacao
+            </summary>
+            <returns>devolve view com lista de Doações presentes em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.DoacaosController.Details(System.Nullable{System.Int32})">
+            <summary>
+            Método que permite ler todos os detalhes de objeto da classe Doacao, selecionado em view, cujos dados estão guardados em BD 
+            </summary>
+            <param name="id">ID do objeto da classe Doacao guardado em BD</param>
+            <returns>devolve view com todos os detalhes de um ID selecionado presente em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.DoacaosController.Create">
+            <summary>
+            Método que devolve a view Create do modelo Doacao com objeto viewModelNovaDoacao. 
+            Atribui a viewModelNovaDoacao dados de voluntarios, eventos e produtos que se encontram em BD
+            Instancia uma nova Lista do tipo ProdutoDoado, vazia e instancia e adiciona um objeto ProdutoDoado vazio a esta lista
+            </summary>
+            <returns>devolve view com formulário para criar o objeto da classe viewModelNovaDoacao</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.DoacaosController.Create(MVC_MBQ.Models.Doacao)">
+            <summary>
+             POST: Doacões/Create
+             Método que adiciona objeto Doacao criado e objetos ProdutoDoado à  BD
+             Adiciona objetos do tipo ProdutoDoado à BD, ao objeto do tipo Doacao criado
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="doacao">objeto  da classe Doacao criado no Formulário</param>
+            <returns>View Create com o objeto criado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.DoacaosController.AddProdutoDoado(MVC_MBQ.Models.ViewModelNovaDoacao)">
+            <summary>
+            Método que atribui ao viewModelNovaDoacao os dados da BD de Voluntarios, Eventos, Produtos 
+            Instancia e adiciona à doacao um novo objeto, sem dados, do tipo ProdutoDoado
+            </summary>
+            <param name="viewModelNovaDoacao"> objeto do tipo ViewModelNovaDoacao</param>
+            <returns>devolve a view Create com o viewModelNovaDoacao com dados de Voluntarios, Eventos e Produtos e um novo campo no formulário para adicionar novo ProdutoDoado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.DoacaosController.Edit(System.Nullable{System.Int32})">
+            <summary>
+             Método que devolve a view Editar do objeto seleccionado da classe Doacao que se encontra em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para editar</param>
+            <returns>devolve view Edit com formulário para editar o objeto selecionado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.DoacaosController.Edit(System.Int32,MVC_MBQ.Models.Doacao)">
+            <summary>
+             POST: Doacaos/Edit
+             Método que edita objeto do tipo Doacao que se encontra na BD e atualiza a BD 
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="id">id de objeto a ser alterado</param>
+            <param name="doacao">objeto  da classe Doacao editado no Formulário</param>
+            <returns>View Edit com o objeto editado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.DoacaosController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            Método que devolve a view Delete com objeto da classe Doacao selecionado e que se encontra guardado em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar</param>
+            <returns>devolve view com formulário para apagar o objeto selecionado da classe Doacao</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.DoacaosController.DeleteConfirmed(System.Int32)">
+            <summary>
+            Método que apaga objeto selecionado e atualiza a BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar </param>
+            <returns>devolve view Index</returns>
+        </member>
+        <member name="T:MVC_MBQ.Controllers.EntregaFamiliasController">
+            <summary>
+            Controller relativo ao Modelo EntregaFamilia.
+            Fornece/Implementa todos os métodos relativos a acções CRUD
+            </summary>
+        </member>
+        <member name="F:MVC_MBQ.Controllers.EntregaFamiliasController._context">
+            <summary>
+            Método que cria variável local com atribuição do objeto da classe AppMovimentoBDQContext
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.EntregaFamiliasController.Index">
+            <summary>
+            Método da view Index referente ao modelo EntregaFamilia
+            </summary>
+            <returns>devolve view com lista de entregas a famílias realizadas e presentes em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.EntregaFamiliasController.Details(System.Nullable{System.Int32})">
+            <summary>
+            Método que permite ler todos os detalhes de objeto da classe EntregaFamilia, selecionado em view, cujos dados estão guardados em BD 
+            </summary>
+            <param name="id">ID do objeto da classe EntregaFamilia guardado em BD</param>
+            <returns>devolve view com todos os detalhes de um ID selecionado presente em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.EntregaFamiliasController.Create">
+            <summary>
+            Método que devolve a view Create do modelo EntregaFamilia com objeto viewModelNovaEntregaFamilia. 
+            Atribui a viewModelNovaEntregaFamilia dados de famílias e produtos que se encontram em BD
+            Instancia uma nova Lista do tipo ProdutoEntregue, vazia e instancia e adiciona um objeto ProdutoEntregue vazio a esta lista
+            </summary>
+            <returns>devolve view com formulário para criar o objeto da classe viewModelNovaEntregaFamilia</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.EntregaFamiliasController.Create(MVC_MBQ.Models.EntregaFamilia)">
+            <summary>
+             POST: Categorias/Create
+             Método que adiciona objeto EntregaFamilia e objetos ProdutoEntregue criados à BD
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="entregaFamilia">objeto  da classe EntregaFamilia criado no Formulário</param>
+            <returns>View Create com o objeto criado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.EntregaFamiliasController.AddProdutoEntregue(MVC_MBQ.Models.ViewModelNovaEntregaFamilia)">
+            <summary>
+            Método que atribui ao viewModelNovaEntregaFamilia os dados da BD de Famílias e Produtos
+            Instancia e adiciona à EntregaFamilia um novo objeto, sem dados, do tipo ProdutoEntregue
+            </summary>
+            <param name="viewModelNovaEntregaFamilia"> objeto do tipo viewModelNovaEntregaFamilia</param>
+            <returns>devolve a view Create com o viewModelNovaEntregaFamilia com dados de famílias e produtos e um novo campo no formulário para adicionar novo ProdutoEntregue</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.EntregaFamiliasController.Edit(System.Nullable{System.Int32})">
+            <summary>
+             Método que devolve a view Editar do objeto seleccionado da classe EntregaFamilia que se encontra em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para editar</param>
+            <returns>devolve view Edit com formulário para editar o objeto selecionado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.EntregaFamiliasController.Edit(System.Int32,MVC_MBQ.Models.EntregaFamilia)">
+            <summary>
+             POST: Categorias/Edit
+             Método que edita objeto do tipo EntregaFamilia que se encontra na BD e atualiza a BD 
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="id">id de objeto a ser alterado</param>
+            <param name="entregaFamilia">objeto  da classe EntregaFamilia editado no Formulário</param>
+            <returns>View Edit com o objeto editado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.EntregaFamiliasController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            Método que devolve a view Delete com objeto da classe EntregaFamilia selecionado e que se encontra guardado em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar</param>
+            <returns>devolve view com formulário para apagar o objeto selecionado da classe EntregaFamilia</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.EntregaFamiliasController.DeleteConfirmed(System.Int32)">
+            <summary>
+            Método que apaga objeto selecionado e atualiza a BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar </param>
+            <returns>devolve view Index</returns>
+        </member>
+        <member name="T:MVC_MBQ.Controllers.EventoesController">
+            <summary>
+            Controller relativo ao Modelo Evento.
+            Fornece/Implementa todos os métodos relativos a acções CRUD
+            </summary>
+        </member>
+        <member name="F:MVC_MBQ.Controllers.EventoesController._context">
+            <summary>
+            Método que cria variável local com atribuição do objeto da classe AppMovimentoBDQContext
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.EventoesController.Index">
+            <summary>
+            Método da view Index referente ao modelo Evento
+            </summary>
+            <returns>devolve view com lista de eventos realizados e presentes em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.EventoesController.Details(System.Nullable{System.Int32})">
+            <summary>
+            Método que permite ler todos os detalhes de objeto da classe Evento, selecionado em view, cujos dados estão guardados em BD 
+            </summary>
+            <param name="id">ID do objeto da classe Evento guardado em BD</param>
+            <returns>devolve view com todos os detalhes de um ID selecionado presente em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.EventoesController.Create">
+            <summary>
+            Método que devolve a view Create do modelo Evento
+            </summary>
+            <returns>devolve view com formulário para criar o objeto da classe Evento</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.EventoesController.Create(MVC_MBQ.Models.Evento)">
+            <summary>
+             POST: Eventos/Create
+             Método que adiciona objeto Evento criado na BD
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="evento">objeto  da classe Evento criado no Formulário</param>
+            <returns>View Create com o objeto criado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.EventoesController.Edit(System.Nullable{System.Int32})">
+            <summary>
+             Método que devolve a view Editar do objeto seleccionado da classe Evento que se encontra em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para editar</param>
+            <returns>devolve view Edit com formulário para editar o objeto selecionado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.EventoesController.Edit(System.Int32,MVC_MBQ.Models.Evento)">
+            <summary>
+             POST: Eventoes/Edit
+             Método que edita objeto do tipo Evento que se encontra na BD e atualiza a BD 
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="id">id de objeto a ser alterado</param>
+            <param name="evento">objeto  da classe Evento editado no Formulário</param>
+            <returns>View Edit com o objeto editado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.EventoesController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            Método que devolve a view Delete com objeto da classe Evento selecionado e que se encontra guardado em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar</param>
+            <returns>devolve view com formulário para apagar o objeto selecionado da classe Evento</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.EventoesController.DeleteConfirmed(System.Int32)">
+            <summary>
+            Método que apaga objeto selecionado e atualiza a BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar </param>
+            <returns>devolve view Index</returns>
+        </member>
+        <member name="T:MVC_MBQ.Controllers.FamiliasController">
+            <summary>
+            Controller relativo ao Modelo Familia.
+            Fornece/Implementa todos os métodos relativos a acções CRUD
+            </summary>
+        </member>
+        <member name="F:MVC_MBQ.Controllers.FamiliasController._context">
+            <summary>
+            Método que cria variável local com atribuição do objeto da classe AppMovimentoBDQContext
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.FamiliasController.Index">
+            <summary>
+            Método da view Index referente ao modelo Familia
+            </summary>
+            <returns>devolve view com lista de famílias presentes em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.FamiliasController.Details(System.Nullable{System.Int32})">
+            <summary>
+            Método que permite ler todos os detalhes de objeto da classe Familia, selecionado em view, cujos dados estão guardados em BD 
+            </summary>
+            <param name="id">ID do objeto da classe Familia guardado em BD</param>
+            <returns>devolve view com todos os detalhes de um ID selecionado presente em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.FamiliasController.Create">
+            <summary>
+            Método que devolve a view Create do modelo Familia
+            </summary>
+            <returns>devolve view com formulário para criar o objeto da classe Familia</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.FamiliasController.Create(MVC_MBQ.Models.Familia)">
+            <summary>
+             POST: Familias/Create
+             Método que adiciona objeto Familia criado na BD
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="familia">objeto  da classe Familia criado no Formulário</param>
+            <returns>View Create com o objeto criado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.FamiliasController.Edit(System.Nullable{System.Int32})">
+            <summary>
+             Método que devolve a view Editar do objeto seleccionado da classe Familia que se encontra em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para editar</param>
+            <returns>devolve view Edit com formulário para editar o objeto selecionado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.FamiliasController.Edit(System.Int32,MVC_MBQ.Models.Familia)">
+            <summary>
+             POST: Familias/Edit
+             Método que edita objeto do tipo  Familia que se encontra na BD e atualiza a BD 
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="id">id de objeto a ser alterado</param>
+            <param name="familia">objeto  da classe Familia editado no Formulário</param>
+            <returns>View Edit com o objeto editado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.FamiliasController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            Método que devolve a view Delete com objeto da classe Familia selecionado e que se encontra guardado em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar</param>
+            <returns>devolve view com formulário para apagar o objeto selecionado da classe Familia</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.FamiliasController.DeleteConfirmed(System.Int32)">
+            <summary>
+            Método que apaga objeto selecionado e atualiza a BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar </param>
+            <returns>devolve view Index</returns>
+        </member>
+        <member name="T:MVC_MBQ.Controllers.HomeController">
+            <summary>
+            Controller relativo às páginas do website.
+            </summary>
+        </member>
+        <member name="F:MVC_MBQ.Controllers.HomeController._logger">
+            <summary>
+            variável local do tipo ILogger para gestão de interface
+            </summary>
+        </member>
+        <member name="F:MVC_MBQ.Controllers.HomeController._application">
+            <summary>
+            variável local to tipo Data.ApplicationDbContext
+            Para gestão de identity
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.HomeController.#ctor(Microsoft.Extensions.Logging.ILogger{MVC_MBQ.Controllers.HomeController},MVC_MBQ.Data.ApplicationDbContext,Microsoft.AspNetCore.Identity.UserManager{MVC_MBQ.Models.AppUser})">
+            <summary>
+            Método que atribui a variaveis locais informação guardada na BD.
+            </summary>
+            <param name="logger">objeto do tipo ILogger. </param>
+            <param name="application">objeto do tipo  Data.ApplicationDbContext.</param>
+            <param name="userMgr">objeto do tipo UserManager.</param>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.HomeController.Index">
+            <summary>
+            Método da view Index do website.
+            Permite acesso de utilizadores não autenticados
+            Obtém data de atualização do ficheiro xml
+            </summary>
+            <returns>view Index com data de atualização</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.HomeController.PapiApp">
+            <summary>
+            Método da view PapiAppi do website.
+            Obtém data de atualização do ficheiro xml
+            Acesso apenas a utilizadores autenticados
+            </summary>
+            <returns>view da PapiAppi com data de atualização.Caso utilizador não autenticado devolve view _noAcess</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.HomeController.Equipa">
+            <summary>
+            Método da view Equipa do website.
+            Acesso apenas a utilizadores autenticados
+            </summary>
+            <returns>view da Equipa. Caso utilizador não autenticado devolve view _noAcess</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.HomeController.Error">
+            <summary>
+            Método para Erro
+            </summary>
+            <returns>view com erro especificado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.HomeController.ComoAjudar">
+            <summary>
+            Método que devolve view de Como Ajudar
+            </summary>
+            <returns>view de ComoAjudar</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.HomeController.AnaDomingues">
+            <summary>
+            Método que devolve view de página pessoal de Ana Domingues
+            </summary>
+            <returns>view de AnaDomingues</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.HomeController.Contactos">
+            <summary>
+            Método que devolve view de Contactos do MBQ
+            </summary>
+            <returns>devolve view de Contactos</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.HomeController.Privacidade">
+            <summary>
+            Método que devolve view da Política de  Privacidade
+            </summary>
+            <returns>devolve view de Privacidade</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.HomeController.CampanhaDonativos">
+            <summary>
+            Método que devolve view de Campanha de Donativos realizadas pelo MBQ
+            </summary>
+            <returns>devolve view de CampanhaDonativos</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.HomeController.JoaoSilva">
+            <summary>
+            Método que devolve view de página pessoal de João Silva
+            </summary>
+            <returns>view de JoaoSilva</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.HomeController.QuemSomos">
+            <summary>
+             Método que devolve view de Quem Somos na qual explica o propósito do MBQ
+            </summary>
+            <returns>devolve view de QuemSomos</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.HomeController.TiposDonativo">
+            <summary>
+             Método que devolve view de Tipos de Donativos na qual explica os tipos de donativos que MBQ aceitam
+            </summary>
+            <returns>devolve view de TiposDonativo</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.HomeController.Docs">
+            <summary>
+             Método que devolve view de Documentação técnica e de utilização da PapiAppi
+            </summary>
+            <returns>devolve view de Docs</returns>
+        </member>
+        <member name="T:MVC_MBQ.Controllers.InscricoesController">
+            <summary>
+            Controller relativo ao Modelo Inscricao.
+            Fornece/Implementa todos os métodos relativos a acções CRUD
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.InscricoesController.#ctor(MVC_MBQ.Models.AppMovimentoBQDbContext)">
+            <summary>
+            Método que cria variável local com atribuição do objeto da classe AppMovimentoBDQContext
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.InscricoesController.Index">
+            <summary>
+            Método da view Index referente ao modelo Inscricao
+            </summary>
+            <returns>devolve view com lista de inscrições realizadas e presentes em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.InscricoesController.Details(System.Nullable{System.Int32})">
+            <summary>
+            Método que permite ler todos os detalhes de objeto da classe Inscricao, selecionado em view, cujos dados estão guardados em BD 
+            </summary>
+            <param name="id">ID do objeto da classe Inscricao guardado em BD</param>
+            <returns>devolve view com todos os detalhes de um ID selecionado presente em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.InscricoesController.Create">
+            <summary>
+            Método que devolve a view Create do modelo ViewModelNovaInscricao
+            obtém dados da BD e atribui a lista de eventos e voluntarios
+            </summary>
+            <returns>devolve view com formulário para criar o objeto da classe ViewModelNovaInscricao</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.InscricoesController.Create(MVC_MBQ.Models.Inscricao)">
+            <summary>
+             POST: Inscricoes/Create
+             Método que adiciona objeto Inscricao adicionando à BD
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="inscricao">objeto  da classe Inscricao criado no Formulário</param>
+            <returns>View Create com o objeto criado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.InscricoesController.Edit(System.Nullable{System.Int32})">
+            <summary>
+             Método que devolve a view Editar do objeto seleccionado da classe Inscricao que se encontra em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para editar</param>
+            <returns>devolve view Edit com formulário para editar o objeto selecionado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.InscricoesController.Edit(System.Int32,MVC_MBQ.Models.Inscricao)">
+            <summary>
+             POST: Inscricoes/Edit
+             Método que edita objeto do tipo Inscricao que se encontra na BD e atualiza a BD 
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="id">id de objeto a ser alterado</param>
+            <param name="inscricao">objeto  da classe Inscricao editado no Formulário</param>
+            <returns>View Edit com o objeto editado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.InscricoesController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            Método que devolve a view Delete com objeto da classe Inscricao selecionado e que se encontra guardado em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar</param>
+            <returns>devolve view com formulário para apagar o objeto selecionado da classe Inscricao</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.InscricoesController.DeleteConfirmed(System.Int32)">
+            <summary>
+            Método que apaga objeto selecionado e atualiza a BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar </param>
+            <returns>devolve view Index</returns>
+        </member>
+        <member name="T:MVC_MBQ.Controllers.MembroFamiliasController">
+            <summary>
+            Controller relativo ao Modelo MembroFamilia.
+            Fornece/Implementa todos os métodos relativos a acções CRUD
+            </summary>
+        </member>
+        <member name="F:MVC_MBQ.Controllers.MembroFamiliasController._context">
+            <summary>
+            Método que cria variável local com atribuição do objeto da classe AppMovimentoBDQContext
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.MembroFamiliasController.#ctor(MVC_MBQ.Models.AppMovimentoBQDbContext)">
+            <summary>
+            Método que cria variável local com atribuição do objeto da classe AppMovimentoBDQContext
+            </summary>
+            <param name="context">objeto do tipo AppMovimentoBQDbContext</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MVC_MBQ.Controllers.MembroFamiliasController.Index" -->
+        <member name="M:MVC_MBQ.Controllers.MembroFamiliasController.Details(System.Nullable{System.Int32})">
+            <summary>
+            Método que permite ler todos os detalhes de objeto da classe MembroFamilia, selecionado em view, cujos dados estão guardados em BD 
+            </summary>
+            <param name="id">ID do objeto da classe MembroFamilia guardado em BD</param>
+            <returns>devolve view com todos os detalhes de um ID selecionado presente em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.MembroFamiliasController.Create">
+            <summary>
+            Método que devolve a view Create do modelo ViewModelNovoMembroFamilia
+            obtém dados de Famílias e envia para view lista de Famílias
+            </summary>
+            <returns>devolve view com formulário para criar o objeto da classe ViewModelNovoMembroFamilia</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.MembroFamiliasController.Create(MVC_MBQ.Models.MembroFamilia)">
+            <summary>
+             POST: MembroFamilias/Create
+             Método que adiciona objeto MembroFamilia adicionando à BD
+             Valida através de API se email existe e é válido ou não. 
+             Valida data de nascimento para inferior a data atual
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="membroFamilia">objeto  da classe MembroFamilia criado no Formulário</param>
+            <returns>View Create com o objeto membroFamilia criado. Caso email não seja válido/existente devolve view create com alerta</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MVC_MBQ.Controllers.MembroFamiliasController.Edit(System.Nullable{System.Int32})" -->
+        <member name="M:MVC_MBQ.Controllers.MembroFamiliasController.Edit(System.Int32,MVC_MBQ.Models.MembroFamilia)">
+            <summary>
+             POST: MembroFamilias/Edit
+             Método que edita objeto do tipo MembroFamilia que se encontra na BD e atualiza a BD 
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="id">id de objeto a ser alterado</param>
+            <param name="membroFamilia">objeto  da classe MembroFamilia editado no Formulário</param>
+            <returns>View Edit com o objeto editado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.MembroFamiliasController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            Método que devolve a view Delete com objeto da classe MembroFamilia selecionado e que se encontra guardado em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar</param>
+            <returns>devolve view com formulário para apagar o objeto selecionado da classe MembroFamilia</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.MembroFamiliasController.DeleteConfirmed(System.Int32)">
+            <summary>
+            Método que apaga objeto selecionado e atualiza a BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar </param>
+            <returns>devolve view Index</returns>
+        </member>
+        <member name="T:MVC_MBQ.Controllers.NewslettersController">
+            <summary>
+            Controller relativo ao Modelo  Newsletter.
+            Fornece/Implementa todos os métodos relativos a acções CRUD
+            </summary>
+        </member>
+        <member name="F:MVC_MBQ.Controllers.NewslettersController._context">
+            <summary>
+            Método que cria variável local com atribuição do objeto da classe AppMovimentoBDQContext
+            </summary>
+        </member>
+        <member name="F:MVC_MBQ.Controllers.NewslettersController._configuration">
+            <summary>
+            Método que cria variável local com atribuição do objeto da classe IConfiguration
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.NewslettersController.Index">
+            <summary>
+            Método da view Index referente ao modelo Newsletters
+            </summary>
+            <returns>devolve view com lista de emails subscritos para Newsletters realizados e presentes em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.NewslettersController.Details(System.Nullable{System.Int32})">
+            <summary>
+            Método que permite ler todos os detalhes de objeto da classe Newsletter, selecionado em view, cujos dados estão guardados em BD 
+            </summary>
+            <param name="id">ID do objeto da classe Newsletter guardado em BD</param>
+            <returns>devolve view com todos os detalhes de um ID selecionado presente em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.NewslettersController.Create">
+            <summary>
+            Método que devolve a view Create do modelo Newsletter
+            </summary>
+            <returns>devolve view com formulário para criar o objeto da classe Newsletter</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.NewslettersController.Create(MVC_MBQ.Models.Newsletter)">
+            <summary>
+             POST: Newsletters/Create
+             Método que adiciona objeto Newsletter adicionando à BD
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="newsletter">objeto  da classe Newsletter criado no Formulário</param>
+            <returns>View Create com o objeto criado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.NewslettersController.Edit(System.Nullable{System.Int32})">
+            <summary>
+             Método que devolve a view Editar do objeto seleccionado da classe Newsletter que se encontra em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para editar</param>
+            <returns>devolve view Edit com formulário para editar o objeto selecionado</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MVC_MBQ.Controllers.NewslettersController.Edit(System.Int32,MVC_MBQ.Models.Newsletter)" -->
+        <member name="M:MVC_MBQ.Controllers.NewslettersController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            Método que devolve a view Delete com objeto da classe Newsletter selecionado e que se encontra guardado em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar</param>
+            <returns>devolve view com formulário para apagar o objeto selecionado da classe Newsletter</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.NewslettersController.DeleteConfirmed(System.Int32)">
+            <summary>
+            Método que apaga objeto selecionado e atualiza a BD
+            Valida AntiforferyToken e apenas executa se validado
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar </param>
+            <returns>devolve view Index</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.NewslettersController.NewsletterExists(System.Int32)">
+            <summary>
+            Metodo que verifica se id seleccionado de Newsletter existe em BD
+            </summary>
+            <param name="id">ID de Newsletter selecionado</param>
+            <returns></returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.NewslettersController.EnviarNewsletter(MVC_MBQ.Models.EmailFormModel)">
+            <summary>
+            Método que devolve a view EnviarNewsletter do modelo EmailFormModel para enviar mensagem a um contacto de email 
+            </summary>
+            <returns>devolve view com formulário para criar o objeto da classe EmailFormModel</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.NewslettersController.Sent">
+            <summary>
+            Método que devolve view de confirmação de envio
+            </summary>
+            <returns>view Sent que confirma envio</returns>
+        </member>
+        <member name="T:MVC_MBQ.Controllers.OQueDoarController">
+            <summary>
+            Controller relativo ao Modelo OQueDoar.
+            Fornece/Implementa todos os métodos relativos a acções CRUD
+            </summary>
+        </member>
+        <member name="F:MVC_MBQ.Controllers.OQueDoarController._configuration">
+            <summary>
+            Método que cria variável local com atribuição do objeto da classe IConfiguration
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.OQueDoarController.Index">
+            <summary>
+            Método da view Index referente ao modelo OQueDoar
+            </summary>
+            <returns>devolve view com lista de entregas a famílias realizadas e presentes em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.OQueDoarController.OQueDoar">
+            <summary>
+            Método da view OQueDoar referente ao modelo OQueDoar
+            </summary>
+            <returns>devolve view com formulario para enviar mensagem a questionar o que doar  realizadas e presentes em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.OQueDoarController.OQueDoar(MVC_MBQ.Models.EmailFormModel)">
+            <summary>
+            Método da view OQueDoar referente ao modelo EmailFormModel
+            </summary>
+            <returns>devolve view com mensagem enviada a questionar o que doar  realizadas e presentes em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.OQueDoarController.Sent">
+            <summary>
+            Método que confirma envio de mensagem
+            </summary>
+            <returns>view Sent</returns>
+        </member>
+        <member name="T:MVC_MBQ.Controllers.ProdutosController">
+            <summary>
+            Controller relativo ao Modelo Produto.
+            Fornece/Implementa todos os métodos relativos a acções CRUD
+            </summary>
+        </member>
+        <member name="F:MVC_MBQ.Controllers.ProdutosController._context">
+            <summary>
+            Método que cria variável local com atribuição do objeto da classe AppMovimentoBDQContext
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosController.Index">
+            <summary>
+            Método da view Index referente ao modelo Produto
+            </summary>
+            <returns>devolve view com lista de produtos registados e presentes em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosController.Details(System.Nullable{System.Int32})">
+            <summary>
+            Método que permite ler todos os detalhes de objeto da classe Produto, selecionado em view, cujos dados estão guardados em BD 
+            </summary>
+            <param name="id">ID do objeto da classe Produto guardado em BD</param>
+            <returns>devolve view com todos os detalhes de um ID selecionado presente em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosController.Create">
+            <summary>
+            Método que devolve a view Create do modelo Produto
+            </summary>
+            <returns>devolve view com formulário para criar o objeto da classe Produto</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosController.Create(MVC_MBQ.Models.Produto)">
+            <summary>
+             POST: Produtos/Create
+             Método que adiciona objeto Produto adicionando à BD
+             Valida AntiForgeryToken. Caso não validado não executa ação
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="produto">objeto  da classe Produto criado no Formulário</param>
+            <returns>View Create com o objeto criado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosController.Edit(System.Nullable{System.Int32})">
+            <summary>
+             Método que devolve a view Editar do objeto seleccionado da classe Produto que se encontra em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para editar</param>
+            <returns>devolve view Edit com formulário para editar o objeto selecionado</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MVC_MBQ.Controllers.ProdutosController.Edit(System.Int32,MVC_MBQ.Models.Produto)" -->
+        <member name="M:MVC_MBQ.Controllers.ProdutosController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            Método que devolve a view Delete com objeto da classe Produto  selecionado e que se encontra guardado em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar</param>
+            <returns>devolve view com formulário para apagar o objeto selecionado da classe Produto</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosController.DeleteConfirmed(System.Int32)">
+            <summary>
+            Método que apaga objeto selecionado e atualiza a BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar </param>
+            <returns>devolve view Index</returns>
+        </member>
+        <member name="T:MVC_MBQ.Controllers.ProdutosDoadosController">
+            <summary>
+            Controller relativo ao Modelo ProdutosDoados.
+            Fornece/Implementa todos os métodos relativos a acções CRUD
+            </summary>
+        </member>
+        <member name="F:MVC_MBQ.Controllers.ProdutosDoadosController._context">
+            <summary>
+            Método que cria variável local com atribuição do objeto da classe AppMovimentoBDQContext
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosDoadosController.Index">
+            <summary>
+            Método da view Index referente ao modelo ProdutosDoados
+            </summary>
+            <returns>devolve view com lista de Produtos Doados e presentes em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosDoadosController.Details(System.Nullable{System.Int32})">
+            <summary>
+            Método que permite ler todos os detalhes de objeto da classe ProdutoDoado, selecionado em view, cujos dados estão guardados em BD 
+            </summary>
+            <param name="id">ID do objeto da classe ProdutoDoado guardado em BD</param>
+            <returns>devolve view com todos os detalhes de um ID selecionado presente em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosDoadosController.Edit(System.Nullable{System.Int32})">
+            <summary>
+            Método que devolve a view Create do modelo ProdutoDoado
+            </summary>
+            <param name="id">id de objeto a ser alterado</param>
+            <returns>devolve view com formulário para criar o objeto da classe ProdutoDoado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosDoadosController.Edit(System.Int32,MVC_MBQ.Models.ProdutoDoado)">
+            <summary>
+             POST: ProdutosDoados/Edit
+             Método que edita objeto do tipo ProdutoDoado que se encontra na BD e atualiza a BD 
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="id">id de objeto a ser alterado</param>
+            <param name="produtoDoado">objeto  da classe ProdutoDoado editado no Formulário</param>
+            <returns>View Edit com o objeto editado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosDoadosController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            Método que devolve a view Delete com objeto da classe ProdutoDoado selecionado e que se encontra guardado em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar</param>
+            <returns>devolve view com formulário para apagar o objeto selecionado da classe ProdutoDoado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosDoadosController.DeleteConfirmed(System.Int32)">
+            <summary>
+            Método que apaga objeto selecionado e atualiza a BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar </param>
+            <returns>devolve view Index</returns>
+        </member>
+        <member name="T:MVC_MBQ.Controllers.ProdutosEntreguesController">
+            <summary>
+            Controller relativo ao Modelo ProdutoEntregue.
+            Fornece/Implementa todos os métodos relativos a acções CRUD
+            </summary>
+        </member>
+        <member name="F:MVC_MBQ.Controllers.ProdutosEntreguesController._context">
+            <summary>
+            Método que cria variável local com atribuição do objeto da classe AppMovimentoBDQContext
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosEntreguesController.Index">
+            <summary>
+            Método da view Index referente ao modelo ProdutoEntregue
+            </summary>
+            <returns>devolve view com lista de produtos doados e presentes em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosEntreguesController.Details(System.Nullable{System.Int32})">
+            <summary>
+            Método que permite ler todos os detalhes de objeto da classe ProdutoEntregue, selecionado em view, cujos dados estão guardados em BD 
+            </summary>
+            <param name="id">ID do objeto da classe ProdutoEntregue guardado em BD</param>
+            <returns>devolve view com todos os detalhes de um ID selecionado presente em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosEntreguesController.Edit(System.Nullable{System.Int32})">
+            <summary>
+             Método que devolve a view Editar do objeto seleccionado da classe ProdutoEntregue que se encontra em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para editar</param>
+            <returns>devolve view Edit com formulário para editar o objeto selecionado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosEntreguesController.Edit(System.Int32,MVC_MBQ.Models.ProdutoEntregue)">
+            <summary>
+             POST: ProdutosEntregues/Edit
+             Método que edita objeto do tipo ProdutoEntregue que se encontra na BD e atualiza a BD 
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+             <param name="id">id de objeto a ser alterado</param>
+            <param name="produtoEntregue">objeto  da classe ProdutoEntregue editado no Formulário</param>
+            <returns>View Edit com o objeto editado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosEntreguesController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            Método que devolve a view Delete com objeto da classe ProdutoEntregue selecionado e que se encontra guardado em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar</param>
+            <returns>devolve view com formulário para apagar o objeto selecionado da classe ProdutoEntregue</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.ProdutosEntreguesController.DeleteConfirmed(System.Int32)">
+            <summary>
+            Método que apaga objeto selecionado e atualiza a BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar </param>
+            <returns>devolve view Index</returns>
+        </member>
+        <member name="T:MVC_MBQ.Controllers.VoluntariosController">
+            <summary>
+            Controller relativo ao Modelo Voluntario.
+            Fornece/Implementa todos os métodos relativos a acções CRUD
+            </summary>
+        </member>
+        <member name="F:MVC_MBQ.Controllers.VoluntariosController._context">
+            <summary>
+            Método que cria variável local com atribuição do objeto da classe AppMovimentoBDQContext
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.VoluntariosController.Index">
+            <summary>
+            Método da view Index referente ao modelo Voluntario
+            </summary>
+            <returns>devolve view com lista de voluntarios inscritos e presentes em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.VoluntariosController.Details(System.Nullable{System.Int32})">
+            <summary>
+            Método que permite ler todos os detalhes de objeto da classe Voluntario, selecionado em view, cujos dados estão guardados em BD 
+            </summary>
+            <param name="id">ID do objeto da classe Voluntario guardado em BD</param>
+            <returns>devolve view com todos os detalhes de um ID selecionado presente em BD</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.VoluntariosController.Create">
+            <summary>
+            Método que devolve a view Create do modelo ViewModelNovoVoluntario
+            </summary>
+            <returns>devolve view com formulário para criar o objeto da classe ViewModelNovoVoluntario</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.VoluntariosController.Create(MVC_MBQ.Models.Voluntario)">
+            <summary>
+             POST: Voluntarios/Create
+             Método que adiciona objeto Voluntario adicionando à BD
+             Valida se email existe
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="voluntario">objeto  da classe Voluntario criado no Formulário</param>
+            <returns>View Create com o objeto criado. Caso email nao validado retorna view com formulário contendo mensagem de email não validado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.VoluntariosController.Edit(System.Nullable{System.Int32})">
+            <summary>
+             Método que devolve a view Editar do objeto seleccionado da classe Voluntario que se encontra em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para editar</param>
+            <returns>devolve view Edit com formulário para editar o objeto selecionado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.VoluntariosController.Edit(System.Int32,MVC_MBQ.Models.Voluntario)">
+            <summary>
+             POST: Voluntarios/Edit
+             Método que edita objeto do tipo Voluntario que se encontra na BD e atualiza a BD 
+             To protect from overposting attacks, enable the specific properties you want to bind to.
+             For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            </summary>
+            <param name="id">id de objeto a ser alterado</param>
+            <param name="voluntario">objeto  da classe Categoria editado no Formulário</param>
+            <returns>View Edit com o objeto editado</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.VoluntariosController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            Método que devolve a view Delete com objeto da classe Voluntario selecionado e que se encontra guardado em BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar</param>
+            <returns>devolve view com formulário para apagar o objeto selecionado da classe Voluntario</returns>
+        </member>
+        <member name="M:MVC_MBQ.Controllers.VoluntariosController.DeleteConfirmed(System.Int32)">
+            <summary>
+            Método que apaga objeto selecionado e atualiza a BD
+            </summary>
+            <param name="id">ID do objeto escolhido para apagar </param>
+            <returns>devolve view Index</returns>
+        </member>
+        <member name="T:MVC_MBQ.Models.AppIdentityDbContext">
+            <summary>
+            Classe AppIdentityDbContext
+            </summary>
+        </member>
+        <member name="T:MVC_MBQ.Models.AppMovimentoBQDbContext">
+            <summary>
+            Classe AppMovimentoBQDbContext que herda da classe DbContext. Permite Mapear a BD
+            </summary>
+        </member>
+        <member name="M:MVC_MBQ.Models.AppMovimentoBQDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{MVC_MBQ.Models.AppMovimentoBQDbContext})">
+             <summary>
+             Detalhes de configuração de BD, para BD funcionar é importante inserir a string para BD SQL no appsettings.json, e o contexto no startup.cs: https://docs.microsoft.com/pt-pt/ef/core/cli/dbcontext-creation?tabs=vs.
+             Para fazer migration/update é necessário especificar o DBcontext.
+             Add-Migration InitialCreate -Context AppMovimentoBQDbContext
+            Update-Database -Context AppMovimentoBQDbContext
+             </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.AppMovimentoBQDbContext.Categorias">
+            <value>
+            Propriedade DbSet que guarda repositório de Categorias
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.AppMovimentoBQDbContext.Voluntarios">
+            <value>
+            Propriedade DbSet que guarda repositório de Voluntarios
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.AppMovimentoBQDbContext.Eventos">
+            <value>
+            Propriedade DbSet que guarda repositório de Eventos
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.AppMovimentoBQDbContext.Familias">
+            <value>
+            Propriedade DbSet que guarda repositório de Familias
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.AppMovimentoBQDbContext.Produtos">
+            <value>
+            Propriedade DbSet que guarda repositório de Produtos
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.AppMovimentoBQDbContext.MembroFamilias">
+            <value>
+            Propriedade DbSet que guarda repositório de Membros de Familias
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.AppMovimentoBQDbContext.Inscricoes">
+            <value>
+            Propriedade DbSet que guarda repositório de Inscrições
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.AppMovimentoBQDbContext.ProdutosEntregues">
+            <value>
+            Propriedade DbSet que guarda repositório de Produtos Entregues
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.AppMovimentoBQDbContext.ProdutosDoados">
+            <value>
+            Propriedade DbSet que guarda repositório de Produtos Doados
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.AppMovimentoBQDbContext.EntregaFamilias">
+            <value>
+            Propriedade DbSet que guarda repositório de Entregas realizadas a Famílias
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.AppMovimentoBQDbContext.Doacoes">
+            <value>
+            Propriedade DbSet que guarda repositório de Doações
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.AppMovimentoBQDbContext.Newsletters">
+            <value>
+            Propriedade DbSet que guarda repositório de dados referentes a Newsletters
+            </value>
+        </member>
+        <member name="M:MVC_MBQ.Models.AppMovimentoBQDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Método que faz o populate da Base de Dados
+            </summary>
+            <param name="modelBuilder">objeto do tipo ModelBuilder </param>
+        </member>
+        <member name="T:MVC_MBQ.Models.AppUser">
+            <summary>
+            Classe AppMovimentoBQDbContext que herda da classe IdentityUser. 
+            </summary>
+        </member>
+        <member name="T:MVC_MBQ.Models.Categoria">
+            <summary>
+            Classe Categoria
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.Categoria.ID">
+            <value>
+            Chave Primária.Propriedade que guarda ID de Categoria.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Categoria.NomeCategoria">
+            <value>
+            Propriedade que guarda o Nome das Categorias
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Categoria.Produtos">
+            <value>
+            Propriedade Navegation Property. Lista de tipo de Produtos.
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.Doacao">
+            <summary>
+            Classe Doação
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.Doacao.ID">
+            <value>
+            Chave Primária.Propriedade que guarda ID de Doações.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Doacao.DataDoacao">
+            <value>
+            Propriedade que guarda Data de Doação.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Doacao.EventoID">
+            <value>
+            Propriedade que guarda chave estrangeira Id de Evento.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Doacao.Evento">
+            <summary>
+            Propriedade que guarda Navegation Property Evento
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.Doacao.VoluntarioID">
+            <value>
+            Propriedade que guarda chave estrangeira Id de Voluntário.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Doacao.Voluntario">
+            <value>
+            Navegation Property Voluntário
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Doacao.ProdutosDoados">
+            <value>
+            Navegation Property lista de Produtos Doados
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.EmailFormModel">
+            <summary>
+            Classe EmailFormModel que herda de classe Newsletter
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.EmailFormModel.Subject">
+            <value>
+            Propriedade que guarda dados de Assunto de mensagem a enviar
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.EmailFormModel.FromName">
+            <value>
+            Propriedade que guarda nome de quem provém a mensagem
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.EmailFormModel.FromEmail">
+            <value>
+            Propriedade que guarda a email de origem da mensagem
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.EmailFormModel.Message">
+            <value>
+            Propriedade que guarda  a mensagem enviada
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.EntregaFamilia">
+            <summary>
+            Classe Entrega a Famílias
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.EntregaFamilia.ID">
+            <value>
+            Chave Primária. Propriedade que guarda ID de Entrega a Famílias
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.EntregaFamilia.DataEntrega">
+            <value>
+            Propriedade que guarda as datas de Entrega a Famílias
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.EntregaFamilia.FamiliaID">
+            <value>
+            Chave Estrangeira. Propriedade que guarda o ID de Famílias
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.EntregaFamilia.Familia">
+            <value>
+            Navegation Property que guarda dados de Famílias
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.EntregaFamilia.ProdutosEntregues">
+            <value>
+            Propriedade que guarda Navegation Property lista de Produtos Entregues
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.ErrorViewModel">
+            <summary>
+            Classe de Erros referentes ao identity
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.ErrorViewModel.RequestId">
+            <value>
+            Propriedade que guarda o ID requerido
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ErrorViewModel.ShowRequestId">
+            <value>
+            Propriedade que retorna valor True/False validando a existência de Request ID. 
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.Evento">
+            <summary>
+            Classe de Eventos. Com interface IComparable
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.Evento.ID">
+            <summary>
+            Chave Primária. Propriedade guarda o ID de Eventos
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.Evento.NomeEvento">
+            <value>
+            Propriedade que guarda o nome do evento
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Evento.Telemovel">
+            <value>
+            Propriedade que guarda o telemóvel da pessoa responsável pelo evento
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Evento.Email">
+            <value>
+            Propriedade que guarda o email da pessoa responsável pelo evento
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Evento.Descricao">
+            <value>
+            Propriedade que guarda a descrição do evento
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Evento.DataEvento">
+            <value>
+            Propriedade que guarda a data do evento
+            </value>
+        </member>
+        <member name="M:MVC_MBQ.Models.Evento.CompareTo(System.Object)">
+            <summary>
+            Método que implementa a interface ordenando os eventos por ordem decrescente
+            </summary>
+            <param name="o">objeto evento a adicionar</param>
+            <returns>Eventos ordenados</returns>
+        </member>
+        <member name="P:MVC_MBQ.Models.Evento.Inscricoes">
+            <value>
+            Navegation property que guarda a lista das inscrições
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Evento.Doacoes">
+            <value>
+            Navegation property que guarda a lista de doações.
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.Familia">
+            <summary>
+            Classe de Famílias
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.Familia.ID">
+            <value>
+            Chave Primária.Propriedade que guarda ID de Famílias.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Familia.Nome">
+            <value>
+            Propriedade que guarda o nome da Família.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Familia.EntregasFamilia">
+            <value>
+            Navegation Property lista de Entregas realizadas a famílias
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Familia.MembrosFamilia">
+            <value>
+            Navegation Property lista de Membros de família
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.Inscricao">
+            <summary>
+            Classe Inscrições
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.Inscricao.ID">
+            <value>
+            Chave Primária.Propriedade que guarda ID de Inscrições.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Inscricao.DataInscrição">
+            <value>
+            Propriedade que guarda a Data de Inscrição
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Inscricao.VoluntarioID">
+            <value>
+            Chave Estrangeira que guarda o ID de Voluntário
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Inscricao.Voluntario">
+            <value>
+            Navegation Property que guarda Voluntário
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Inscricao.EventoID">
+            <value>
+            Chave Estrangeira que guarda o ID de Evento
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Inscricao.Evento">
+            <value>
+            Navegation Property que guarda Evento
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.MembroFamilia">
+            <summary>
+            Classe de Membros de Família
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.MembroFamilia.ID">
+            <value>
+            Chave Primária.Propriedade que guarda ID de Famílias.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.MembroFamilia.Nome">
+            <value>
+            Propriedade que guarda o nome do membro da Família.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.MembroFamilia.GrauParentesco">
+            <value>
+            Propriedade que guarda o grau de parentesco do membro da Família.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.MembroFamilia.DataNascimento">
+            <value>
+            Propriedade que guarda a data de nascimento do membro da Família.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.MembroFamilia.Morada">
+            <value>
+            Propriedade que guarda a morada onde o membro da Família reside.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.MembroFamilia.Cidade">
+            <value>
+            Propriedade que guarda a cidade onde membro da Família reside.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.MembroFamilia.Distrito">
+            <value>
+            Propriedade que guarda o Distrito onde membro da Família reside.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.MembroFamilia.Codigo">
+            <value>
+            Propriedade que guarda os 1ºs 4 digitos do código postal onde membro da Família reside.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.MembroFamilia.Postal">
+            <value>
+            Propriedade que guarda os últimos 3 digitos do código postal onde membro da Família reside.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.MembroFamilia.Email">
+            <value>
+            Propriedade que guarda o email do membro da Família.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.MembroFamilia.Descricao">
+            <value>
+            Propriedade que guarda descrição associada ao membro da Família.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.MembroFamilia.FamiliaID">
+            <value>
+            Chave estrangeira. Propriedade que guarda o ID da Família.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.MembroFamilia.Familia">
+            <value>
+            Navegation property com dados de Famílias
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.MyConvertHttpClient">
+            <summary>
+            Classe MyConvertHttpClient
+            </summary>
+        </member>
+        <member name="F:MVC_MBQ.Models.MyConvertHttpClient.baseAddress">
+            <value>
+            Propriedade que guarda o o url base.
+            </value>
+        </member>
+        <member name="F:MVC_MBQ.Models.MyConvertHttpClient.client">
+            <value>
+            variável local do tipo HttpClient.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.MyConvertHttpClient.Client">
+            <value>
+            Propriedade do tipo HttpClient que retorna o client do tipo HttpClient caso exista, caso não exista instancia um novo HttpClient.
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.Newsletter">
+            <summary>
+            Classe de Newsletter
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.Newsletter.ID">
+            <value>
+            Chave Primária. Propriedade que guarda dados de ID de Newsletters
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Newsletter.Ativo">
+            <value>
+            Propriedade que guarda se subscrição para newsletter se encontra ativa ou não
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Newsletter.Email">
+            <value>
+            Propriedade que guarda email que subscreveu newsletter
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Newsletter.ConsentimentoRGPD">
+            <value>
+            Propriedade que guarda se foi dado ou não consentimento para utilização de dados mediante regras de RGPD
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.OQueDoar">
+            <summary>
+            Classe O que Doar. Dados não guardados em BD
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.OQueDoar.Nome">
+            <value>
+            Propriedade que guarda o nome de quem está a enviar mensagem
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.OQueDoar.Apelido">
+            <value>
+            Propriedade que guarda o apelido de quem está a enviar mensagem
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.OQueDoar.Email">
+            <value>
+            Propriedade que guarda o email de quem está a enviar mensagem
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.OQueDoar.Contacto">
+            <value>
+            Propriedade que guarda o número de telefone de quem está a enviar mensagem
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.Produto">
+            <summary>
+            Classe de Produtos
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.Produto.ID">
+            <value>
+            Chave Primária.Propriedade que guarda ID de Produtos.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Produto.NomeProduto">
+            <value>
+            Propriedade que guarda o nome da Produto.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Produto.QuantidadeMinima">
+            <value>
+            Propriedade que guarda a quantidade mínima requerida para o tipo de produto.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Produto.CategoriaID">
+            <value>
+            Chave estrangeira.Guarda dados de ID de Categoria
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Produto.Categoria">
+            <value>
+            Navegation Property de categorias de produtos
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Produto.ProdutosEntregues">
+            <value>
+            Navegation Property lista de produtos entregues a famílias
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Produto.ProdutosDoados">
+            <value>
+            Navegation Property lista de doações realizadas
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.ProdutoDoado">
+            <summary>
+            Classe de Produtos Doados
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.ProdutoDoado.ID">
+            <value>
+            Chave Primária.Propriedade que guarda ID de Produtos Doados.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ProdutoDoado.Quantidade">
+            <value>
+            Propriedade que guarda a quantidade de produto doado.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ProdutoDoado.ProdutoID">
+            <value>
+            Chave Estrangeira. Propriedade que guarda o ID de Produto.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ProdutoDoado.Produto">
+            <value>
+            Navegation Property que guarda o tipo de produto.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ProdutoDoado.DoacaoID">
+            <value>
+            Chave Estrangeira. Propriedade que guarda o ID de Doação.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ProdutoDoado.Doacao">
+            <value>
+            Navegation Property que guarda a doação.
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.ProdutoEntregue">
+            <summary>
+            Classe de Produtos Entregues
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.ProdutoEntregue.ID">
+            <value>
+            Chave Primária.Propriedade que guarda ID de Produtos Entregues.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ProdutoEntregue.Quantidade">
+            <value>
+            Propriedade que guarda a quantidade de produto entregue.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ProdutoEntregue.ProdutoID">
+            <value>
+            Chave Estrangeira. Propriedade que guarda o ID de Produto.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ProdutoEntregue.Produto">
+            <value>
+            Navegation Property que guarda o tipo de produto.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ProdutoEntregue.EntregaFamiliaID">
+            <value>
+            Chave Estrangeira. Propriedade que guarda o ID de Entrega realizada à Família.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ProdutoEntregue.EntregaFamilia">
+            <value>
+            Navegation Property que guarda a entrega realizada à Família.
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.RequestAPI">
+            <summary>
+            Classe RequestAPI - Dados enviados para API
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.RequestAPI.Mail">
+            <value>
+            Propriedade que guarda o email a ser validado pela API
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.ResponseAPI">
+            <summary>
+            Classe ResponseAPI - Dados recebidos da API
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.ResponseAPI.Status">
+            <value>
+            Propriedade que guarda o status de pedido
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ResponseAPI.Result">
+            <value>
+            Propriedade que guarda o resultado de pedido
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ResponseAPI.Flags">
+            <value>
+            Propriedade que guarda a lista de Flags do pedido
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ResponseAPI.SuggestedCorrection">
+            <value>
+            Propriedade que guarda a sugestão de correção do email verificado
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ResponseAPI.ExecutionTime">
+            <value>
+            Propriedade que guarda o tempo decorrido entre pedido e resposta
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.RoleEdit">
+            <summary>
+            Classe RoleEdit
+            </summary>
+        </member>
+        <member name="T:MVC_MBQ.Models.RoleModification">
+            <summary>
+            Classe RoleModification
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.RoleModification.RoleName">
+            <value>
+            Propriedade que guarda o nome do Role criado
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.RoleModification.RoleId">
+            <value>
+            Propriedade que guarda o ID do Role criado
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.RoleModification.AddIds">
+            <value>
+            Propriedade que guarda IDs adicionados
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.RoleModification.DeleteIds">
+            <value>
+            Propriedade que guarda IDs apagados
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.TwoFactor">
+            <summary>
+            Classe TwoFactor. 
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.TwoFactor.TwoFactorCode">
+            <value>
+            Propriedade que guarda string de TwoFactorCode
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.User">
+            <summary>
+            Classe User
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.User.UserName">
+            <value>
+            Propriedade que guarda o username do utilizador
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.User.Email">
+            <value>
+            Propriedade que guarda e valida email do utilizador
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.User.Password">
+            <value>
+            Propriedade que guarda password do utilizador
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.ViewModelNovaDoacao">
+            <summary>
+            Classe ViewModelNovaDoacao com Doacao, Lista de Voluntários, Lista de Eventos e Lista de Produtos. 
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.ViewModelNovaDoacao.Doacao">
+            <value>
+            Objeto do tipo Doação
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ViewModelNovaDoacao.Voluntarios">
+            <value>
+            Lista de Voluntários
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ViewModelNovaDoacao.Eventos">
+            <value>
+            Lista de Eventos
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ViewModelNovaDoacao.Produtos">
+            <value>
+            Lista de Produtos
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.ViewModelNovaEntregaFamilia">
+            <summary>
+            Classe ViewModelNovaEntregaFamilia com Entrega a Familia, Lista de Famílias e Lista de Produtos. 
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.ViewModelNovaEntregaFamilia.EntregaFamilia">
+            <value>
+            Objeto EntregaFamilia
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ViewModelNovaEntregaFamilia.Familias">
+            <value>
+            Lista de Famílias
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ViewModelNovaEntregaFamilia.Produtos">
+            <value>
+            Lista de Produtos
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.ViewModelNovaInscricao">
+            <summary>
+            Classe ViewModelNovaInscricao com Inscrição, Lista de Voluntários, Lista de Eventos. 
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.ViewModelNovaInscricao.Inscricao">
+            <value>
+            Objeto do tipo Inscrição
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ViewModelNovaInscricao.Voluntarios">
+            <value>
+            Lista de Voluntários
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ViewModelNovaInscricao.Eventos">
+            <value>
+            Lista de Eventos
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.ViewModelNovoMembroFamilia">
+            <summary>
+            Classe ViewModelNovoMembroFamilia com ResponseAPI de validação de email, verificação de data de nascimento, Membro de Família e Lista de Famílias. 
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.ViewModelNovoMembroFamilia.ResponsesAPI">
+            <value>
+            Objeto do tipo ResponseAPI
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ViewModelNovoMembroFamilia.MembroFamilia">
+            <value>
+            Objeto do tipo MembroFamilia
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ViewModelNovoMembroFamilia.Familias">
+            <value>
+            Lista de Famílias
+            </value>
+        </member>
+        <member name="F:MVC_MBQ.Models.ViewModelNovoMembroFamilia.VerificaDataNascimento">
+            <value>
+            Objeto com valor true atribuido para verificação de data de nascimento
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.ViewModelNovoProduto">
+            <summary>
+            Classe ViewModelNovoProduto com Produto e Lista de Categorias de produtos.
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.ViewModelNovoProduto.Produto">
+            <value>
+            Objeto do tipo Produto
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ViewModelNovoProduto.Categorias">
+            <value>
+            Lista de Categorias
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ViewModelNovoVoluntario.ResponsesAPI">
+            <value>
+            Objeto do tipo ResponseAPI
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.ViewModelNovoVoluntario.Voluntario">
+            <value>
+            Objeto do tipo Voluntário
+            </value>
+        </member>
+        <member name="F:MVC_MBQ.Models.ViewModelNovoVoluntario.VerificaDataNascimento">
+            <value>
+            Objeto com valor true atribuido para verificação de data de nascimento
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Models.Voluntario">
+            <summary>
+            Classe Voluntário
+            </summary>
+        </member>
+        <member name="P:MVC_MBQ.Models.Voluntario.ID">
+            <value>
+            Chave Primária.Propriedade que guarda ID de Voluntário.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Voluntario.Nome">
+            <value>
+            Propriedade que guarda o Nome do voluntário
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Voluntario.DataNascimento">
+            <value>
+            Propriedade que guarda a data de nascimento do voluntário
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Voluntario.Morada">
+            <value>
+            Propriedade que guarda a morada onde o voluntário reside.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Voluntario.Cidade">
+            <value>
+            Propriedade que guarda a cidade onde voluntário reside.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Voluntario.Distrito">
+            <value>
+            Propriedade que guarda o Distrito onde Voluntário reside.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Voluntario.Codigo">
+            <value>
+            Propriedade que guarda os 1ºs 4 digitos do código postal onde voluntário reside.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Voluntario.Postal">
+            <value>
+            Propriedade que guarda os últimos 3 digitos do código postal onde voluntário reside.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Voluntario.Email">
+            <value>
+            Propriedade que guarda email do voluntário.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Voluntario.Descricao">
+            <value>
+            Propriedade que guarda descrição associada ao voluntário.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Voluntario.ConsentimentoRGPD">
+            <value>
+            Propriedade que guarda se voluntário deu consentimento para utilização de contactos.
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Voluntario.Interno">
+            <value>
+            Propriedade que guarda se voluntário faz parte de escuteiros ou não
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Voluntario.Inscricoes">
+            <value>
+            Navegation property com lista de inscrições
+            </value>
+        </member>
+        <member name="P:MVC_MBQ.Models.Voluntario.Doacoes">
+            <value>
+            Navegation property com lista de doações
+            </value>
+        </member>
+        <member name="T:MVC_MBQ.Services.EmailSender">
+            <summary>
+            Classe EmailSender para envio de emails. 
+            </summary>
+        </member>
+        <member name="T:Identity.Models.Login">
+            <summary>
+            Classe Login
+            </summary>
+        </member>
+        <member name="P:Identity.Models.Login.Email">
+            <value>
+            Propriedade que guarda email de login
+            </value>
+        </member>
+        <member name="P:Identity.Models.Login.Password">
+            <value>
+            Propriedade que guarda password de log in
+            </value>
+        </member>
+        <member name="P:Identity.Models.Login.ReturnUrl">
+            <value>
+            Propriedade que guarda o URL mediante Login
+            </value>
+        </member>
+        <member name="T:Identity.Models.ResetPassword">
+            <summary>
+            Classe Reset Passord - permite fazer reset a passowrd para log in
+            </summary>
+        </member>
+        <member name="P:Identity.Models.ResetPassword.Password">
+            <value>
+            Propriedade que guarda password
+            </value>
+        </member>
+        <member name="P:Identity.Models.ResetPassword.ConfirmPassword">
+            <value>
+            Propriedade que guarda password confirmada e compara com propriedade Password devolvendo mensagem de erro caso não sejam iguais.
+            </value>
+        </member>
+        <member name="P:Identity.Models.ResetPassword.Email">
+            <value>
+            Propriedade que guarda email do utilizador
+            </value>
+        </member>
+        <member name="P:Identity.Models.ResetPassword.Token">
+            <value>
+            Propriedade que guarda Token gerado
+            </value>
+        </member>
+    </members>
+</doc>

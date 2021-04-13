@@ -1,0 +1,109 @@
+﻿@model MVC_MBQ.Models.ViewModelNovoMembroFamilia
+
+@{
+    ViewData["Title"] = "Criar novo membro família";
+}
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>   @Html.ActionLink("PapiApp", "PapiApp", "Home") >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+
+<h1>Criar novo membro de família</h1>
+
+<h2>Membro Familia</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="@Model.MembroFamilia.Nome" class="control-label">Nome</label>
+                <input asp-for="@Model.MembroFamilia.Nome" class="form-control" />
+                <span asp-validation-for="@Model.MembroFamilia.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.MembroFamilia.GrauParentesco" class="control-label">Grau de Parentesco</label>
+                <input asp-for="@Model.MembroFamilia.GrauParentesco" class="form-control" />
+                <span asp-validation-for="@Model.MembroFamilia.GrauParentesco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.MembroFamilia.DataNascimento" class="control-label">Data de Nascimento</label>
+                <input asp-for="@Model.MembroFamilia.DataNascimento" class="form-control" />
+                <span asp-validation-for="@Model.MembroFamilia.DataNascimento" class="text-danger"></span>
+                @if (Model.VerificaDataNascimento == false)
+                {<h6 class="text-danger">Não pode inserir datas de nascimento futuras, por favor reintroduza a data correta.</h6>}
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.MembroFamilia.Morada" class="control-label">Morada</label>
+                <input asp-for="@Model.MembroFamilia.Morada" class="form-control" />
+                <span asp-validation-for="@Model.MembroFamilia.Morada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.MembroFamilia.Cidade" class="control-label">Cidade</label>
+                <input asp-for="@Model.MembroFamilia.Cidade" class="form-control" />
+                <span asp-validation-for="@Model.MembroFamilia.Cidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.MembroFamilia.Distrito" class="control-label">Distrito</label>
+                <input asp-for="@Model.MembroFamilia.Distrito" class="form-control" />
+                <span asp-validation-for="@Model.MembroFamilia.Distrito" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.MembroFamilia.Codigo" class="control-label">Código</label>
+                <input asp-for="@Model.MembroFamilia.Codigo" class="form-control" />
+                <span asp-validation-for="@Model.MembroFamilia.Codigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.MembroFamilia.Postal" class="control-label">Código Postal</label>
+                <input asp-for="@Model.MembroFamilia.Postal" class="form-control" />
+                <span asp-validation-for="@Model.MembroFamilia.Postal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.MembroFamilia.Email" class="control-label">E-mail</label>
+                <input asp-for="@Model.MembroFamilia.Email" class="form-control" />
+                <span asp-validation-for="@Model.MembroFamilia.Email" class="text-danger"></span>
+                @if (Model.ResponsesAPI is null)
+                { }
+                else
+                {
+                    if (@Model.ResponsesAPI.Result != "valid")
+                    {<h6 class="text-danger">O seu email foi verificado e não existe, insira por favor um email válido!</h6>}
+                }
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.MembroFamilia.FamiliaID" class="control-label">Familia</label>
+                <select asp-for="@Model.MembroFamilia.FamiliaID" class="form-control" asp-items="ViewBag.FamiliaID">
+                    @foreach (Familia familia in Model.Familias)
+                    {
+                        <option value="@familia.ID">@familia.Nome</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Adicionar Novo Membro" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar à página anterior</a>
+</div>
+<div>
+    <small>
+        * Ao clicar em criar significa que o titular de dados está a autorizar que os seus dados sejam tratados para as finalidades referidas, tomando conhecimento da Política de Privacidade.
+        No caso de se tratar de dados pessoais de menores de 12 anos apenas se poderá efetuar tratamento no caso de consentimento dado pelo progenitor ou tutor.
+        Caso o titular não autorize utilização dos dados então não será possível realizar o pedido realizado ficando o mesmo sem efeito.
+    </small>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

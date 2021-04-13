@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "Como Ajudar";
+}
+
+<ol class="breadcrumb">
+    <li class="active">
+        @Html.ActionLink("Home", "Index", "Home") > @ViewBag.Title
+    </li>
+</ol>
+
+<div class="jumbotron jumbotron-index">
+    <h1 class="text-primary text-light">Porque Precisamos da sua ajuda?</h1>
+    <h4 class="lead text-light">Ao fazer o seu donativo está a contribuir para que mais de 50 famílias tenham a possibilidade de aceder a bens de primeira necessidade e de enriquecer o desenvolvimento das crianças.</h4>
+    <br />
+    <div class=" row">
+        <div class="col-4">
+            <a class="btn btn-outline-light text-capitalize text-light p-2 btn-black" asp-action="Home" asp-controller="TiposDonativo" role="button"><i class="fa fa-heart"></i> Saiba Como Ajudar</a>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-4 align-content-end">
+            <div class="container py-2">
+                <div class="row">
+                    <div class="input-group col-md-8">
+                        <input class="form-control py-2" type="search" value="Pesquisa" id="example-search-input">
+                        <span class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4" id="cartao1">
+        <div class="card border shadow p-3 mb-5 rounded">
+            <img class="card-img-top" src="~/imagens/Cartao_Bebe_Cereais.png" alt="Fotografia de Bebe a comer cereais para cartao Faça um donativo!">
+            <div class="card-header text-white text-center" style="background-color: #00ADF1">
+                <h5>Faça um donativo!</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Ao fazer um donativo está a ajudar mais de 50 famílias!
+                </p>
+                <p>
+                    O seu donativo pode mudar a vida de muitas crianças. Contribua com leite e outros bens de primeira necessidade.
+                </p>
+                <a class="btn btn-primary btn-lg btn-block" asp-controller="OQueDoar" asp-action="Index" role="button"><i class="bi bi-basket-fill pl-1"></i> Marque a entrega </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4" id="cartao2">
+        <div class="card shadow p-3 mb-5 bg-white rounded">
+            <img class="card-img-top" src="~/imagens/cartao_2_maos.png" alt="Fotografia de 2 mãos de criança para cartao Ofereça Brinquedos!">
+            <div class="card-header text-white text-center" style="background-color: #00ADF1">
+                <h5>Ofereça Brinquedos!</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text ">
+                    Lembre-se de oferecer brinquedos educativos e que ajudem o desenvolvimento das nossas crianças.
+                </p>
+                <p>Adquira online e insira morada da nossa sede.</p>
+
+
+                <a class="btn btn-primary btn-lg btn-block" target="_blank" href="https://www.science4you.pt/" role="button"><i class="bi bi-gift-fill"> </i>Adquira Online </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4" id="cartao3">
+        <div class="card shadow p-3 mb-5 bg-white rounded">
+            <img class="card-img-top" src="~/imagens/Cartao_museu.png" alt="Fotografia de criança em museu para cartao Ofereça Experiências!">
+            <div class="card-header text-white text-center" style="background-color: #00ADF1">
+                <h5>Ofereça Experiências!</h5>
+            </div>
+            <div class="card-body text-left">
+                <p class="card-text">
+                    Desenvolver os mais jovens é apostar no futuro!
+                </p>
+                <p>Proporcione um dia diferente oferecendo bilhetes para uma experiência cultural enriquecedora.</p>
+                <a class="btn btn-primary btn-lg btn-block" asp-controller="Home" asp-action="TiposDonativo" role="button"><i class="bi bi-patch-question-fill"> </i>Tipos de Donativos</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+

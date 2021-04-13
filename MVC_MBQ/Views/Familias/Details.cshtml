@@ -1,0 +1,113 @@
+﻿@model MVC_MBQ.Models.Familia
+
+@{
+    ViewData["Title"] = "Detalhes da Familia";
+}
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>  @Html.ActionLink("PapiApp", "PapiApp", "Home") >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+<h1>Detalhes da Familia</h1>
+
+<p>
+    <a asp-controller="MembroFamilias" asp-action="Create">Adicionar novo membro de família</a>
+</p>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Nome de Família
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+    </dl>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Grau de parentesco
+            </th>
+            <th>
+                Data de Nascimento
+            </th>
+            <th>
+                Morada
+            </th>
+            <th>
+                Cidade
+            </th>
+            <th>
+                Distrito
+            </th>
+            <th>
+                Código postal
+            </th>
+            <th>
+                Código postal adicional
+            </th>
+            <th>
+                E-mail
+            </th>
+            <th>
+                Descrição
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (MembroFamilia membroFamilia in Model.MembrosFamilia)
+        {
+
+            <tr>
+                <td>
+                    @membroFamilia.Nome
+
+                </td>
+                <td>
+                    @membroFamilia.GrauParentesco
+                </td>
+                <td>
+                    @membroFamilia.DataNascimento.ToShortDateString()
+                </td>
+                <td>
+                    @membroFamilia.Morada
+                </td>
+                <td>
+                    @membroFamilia.Cidade
+                </td>
+                <td>
+                    @membroFamilia.Distrito
+                </td>
+                <td>
+                    @membroFamilia.Codigo
+                </td>
+                <td>
+                    @membroFamilia.Postal
+                </td>
+                <td>
+                    @membroFamilia.Email
+                </td>
+                @*<td>
+                        <a asp-controller="MembrosFamilia" asp-action="Edit" asp-route-id="@membroFamilia.ID">Editar</a>|
+                        <a asp-controller="MembrosFamilia" asp-action="Details" asp-route-id="@membroFamilia.ID">Detalhes</a> |
+                        <a asp-controller="MembrosFamilia" asp-action="Delete" asp-route-id="@membroFamilia.ID">Apagar</a>
+                    </td>*@
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Editar</a> |
+    <a asp-action="Index">Voltar à página anterior</a>
+</div>

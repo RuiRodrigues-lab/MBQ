@@ -1,0 +1,151 @@
+﻿@model MVC_MBQ.Models.ViewModelNovoVoluntario
+
+@{
+    ViewData["Title"] = "Adicionar Voluntario";
+}
+
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>  @Html.ActionLink("PapiApp", "PapiApp", "Home") >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+
+<h1>Adicionar Voluntario</h1>
+
+<hr />
+
+<form asp-action="Create">
+    <div class="row">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="form-group">
+
+                <label asp-for="@Model.Voluntario.Nome" class="control-label">Nome:  </label>
+                <input asp-for="@Model.Voluntario.Nome" class="form-control" />
+                <span asp-validation-for="@Model.Voluntario.Nome" class="text-danger"></span>
+
+            </div>
+
+        </div>
+        
+        <div class="col-lg-3 col-md-3 col-sm-3">
+                <div class="form-group">
+                    <label asp-for="@Model.Voluntario.DataNascimento" class="control-label">Data de Nascimento</label>
+                    <input asp-for="@Model.Voluntario.DataNascimento" class="form-control" />
+                    <span asp-validation-for="@Model.Voluntario.DataNascimento" class="text-danger"></span>
+                  @if (Model.VerificaDataNascimento == false)
+                {<h6 class="text-danger">Não pode inserir datas de nascimento futuras, por favor reintroduza a data correta.</h6>}
+                </div>
+        </div>
+    </div>
+        
+
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <div class="form-group">
+                    <label asp-for="@Model.Voluntario.Morada" class="control-label">Morada</label>
+                    <input asp-for="@Model.Voluntario.Morada" class="form-control" />
+                    <span asp-validation-for="@Model.Voluntario.Morada" class="text-danger"></span>
+                </div>
+
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <div class="form-group">
+                    <label asp-for="@Model.Voluntario.Cidade" class="control-label">Cidade</label>
+                    <input asp-for="@Model.Voluntario.Cidade" class="form-control" />
+                    <span asp-validation-for="@Model.Voluntario.Cidade" class="text-danger"></span>
+                </div>
+            </div>
+            </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <div class="form-group">
+                    <label asp-for="@Model.Voluntario.Distrito" class="control-label">Distrito</label>
+                    <input asp-for="@Model.Voluntario.Distrito" class="form-control" />
+                    <span asp-validation-for="@Model.Voluntario.Distrito" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <div class="form-group">
+                    <label asp-for="@Model.Voluntario.Codigo" class="control-label">Código</label>
+                    <input asp-for="@Model.Voluntario.Codigo" class="form-control" />
+                    <span asp-validation-for="@Model.Voluntario.Codigo" class="text-danger"></span>
+                </div>
+            </div>
+        
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <div class="form-group">
+                    <label asp-for="@Model.Voluntario.Codigo" class="control-label">Postal</label>
+                    <input asp-for="@Model.Voluntario.Postal" class="form-control" />
+                    <span asp-validation-for="@Model.Voluntario.Postal" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="form-group">
+                    <label asp-for="@Model.Voluntario.Email" class="control-label">Email</label>
+                    <input asp-for="@Model.Voluntario.Email" class="form-control" />
+                    <span asp-validation-for="@Model.Voluntario.Email" class="text-danger"></span>
+                    @if (Model.ResponsesAPI is null)
+                    { }
+                    else
+                    {
+                        if (@Model.ResponsesAPI.Result != "valid")
+                        {<h6 class="text-danger">O seu email foi verificado e não existe insira por favor um email válido!</h6>}
+                    }
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="form-group">
+                    <label asp-for="@Model.Voluntario.Descricao" class="control-label">Descrição</label>
+                    <input asp-for="@Model.Voluntario.Descricao" class="form-control" />
+                    <span asp-validation-for="@Model.Voluntario.Descricao" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="@Model.Voluntario.ConsentimentoRGPD" /> @Html.DisplayNameFor(model => @Model.Voluntario.ConsentimentoRGPD)
+            </label>
+        </div>
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="@Model.Voluntario.Interno" /> @Html.DisplayNameFor(model => @Model.Voluntario.Interno)
+            </label>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Adicionar" class="btn btn-primary" />
+        </div>
+</form>
+    
+
+
+<div>
+    <a asp-action="Index">Voltar a Lista de Voluntarios</a>
+</div>
+
+<div>
+    <small>
+        * Ao clicar em criar significa que o titular de dados está a autorizar que os seus dados sejam tratados para as finalidades referidas, tomando conhecimento da Política de Privacidade.
+        No caso de se tratar de dados pessoais de menores de 12 anos apenas se poderá efetuar tratamento no caso de consentimento dado pelo progenitor ou tutor.
+        Caso o titular não autorize utilização dos dados então não será possível realizar o pedido realizado ficando o mesmo sem efeito.
+    </small>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

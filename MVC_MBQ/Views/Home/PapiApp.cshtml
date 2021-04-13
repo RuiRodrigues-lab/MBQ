@@ -1,0 +1,281 @@
+﻿@{
+    ViewData["Title"] = "Pápi Api";
+}
+
+<ol class="breadcrumb">
+    <li class="active">
+        @Html.ActionLink("Home", "Index", "Home") > @ViewBag.Title
+    </li>
+</ol>
+
+<div class="row align-items-center justify-content-center">
+    <div class="col text-center">
+        <h1 class="display-4 text-capitalize text-primary">
+            <strong>Pápi Api</strong>
+        </h1>
+    </div>
+</div>
+<br />
+<!--store items-->
+<div class="row store-item" id="storeitems">
+    <!--single item-->
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets box-shadow">
+        <div class="card single-item">
+            <div class="img-container">
+                <img src="~/imagens/VolutariosPapiApp.png" alt="Fotografia Voluntarios" class="card-img-top store-img">
+                <span class="store-item-icon">
+                    <a asp-controller="Voluntarios" asp-action="Index"><i class="fas fa-people-carry text-light"></i></a>
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-text d-flex justify-content-between text-capitalize text-primary">
+                    <h5 id="store-item-name">Voluntarios</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of single item-->
+    <!--single item-->
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets box-shadow">
+        <div class="card single-item">
+            <div class="img-container">
+                <img src="~/imagens/FamiliaPapiApp.png" alt="Fotografia Familias" class="card-img-top store-img">
+                <span class="store-item-icon">
+                    <a asp-controller="Familias" asp-action="Index"><i class="fas fa-users text-light"></i></a>
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-text d-flex justify-content-between text-capitalize text-primary">
+                    <h5 id="store-item-name">Famílias</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of single item-->
+    <!--single item-->
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets box-shadow">
+        <div class="card single-item">
+            <div class="img-container">
+                <img src="~/imagens/OQueDoarPapiApp.png" alt="Fotografia O que Doar" class="card-img-top store-img">
+                <span class="store-item-icon">
+                    <a asp-controller="OQueDoar" asp-action="OQueDoar"><i class="fas fa-gifts text-light"></i></a>
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-text d-flex justify-content-between text-capitalize text-primary">
+                    <h5 id="store-item-name">O que doar?</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of single item-->
+    <!--single item-->
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets box-shadow">
+        <div class="card single-item">
+            <div class="img-container">
+                <img src="~/imagens/CategoriasPapiApp.png" alt="Fotografia Categorias Produtos" class="card-img-top store-img">
+                <span class="store-item-icon">
+                    <a asp-controller="Categorias" asp-action="Index"><i class="fas fa-calendar-alt text-light"></i></a>
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-text d-flex justify-content-between text-capitalize text-primary">
+                    <h5 id="store-item-name">Categorias de Produtos</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of single item-->
+    <!--single item-->
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets box-shadow">
+        <div class="card single-item">
+            <div class="img-container">
+                <img src="~/imagens/ProdutosPapiApp.png" alt="Fotografia Tipo de Produtos" class="card-img-top store-img">
+                <span class="store-item-icon">
+                    <a asp-controller="Produtos" asp-action="Index"><i class="fas fa-shopping-basket text-light"></i></a>
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-text d-flex justify-content-between text-capitalize text-primary">
+                    <h5 id="store-item-name">Tipo de Produtos</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of single item-->
+    <!--single item-->
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets box-shadow">
+        <div class="card single-item">
+            <div class="img-container">
+                <img src="~/imagens/DoadoresPapiApp.png" alt="Fotografia Produtos Doados" class="card-img-top store-img">
+                <span class="store-item-icon">
+                    <a asp-controller="ProdutosDoados" asp-action="Index"><i class="fas fa-hand-holding-usd text-light"></i></a>
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-text d-flex justify-content-between text-capitalize text-primary">
+                    <h5 id="store-item-name">Gestão de Produtos Doados</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of single item-->
+    <!--single item-->
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets box-shadow">
+        <div class="card single-item">
+            <div class="img-container">
+                <img src="~/imagens/PRodutosEntreguesPapiApp.png" alt="Fotografia Produtos Entregues" class="card-img-top store-img">
+                <span class="store-item-icon">
+                    <a asp-controller="ProdutosEntregues" asp-action="Index"><i class="fas fa-truck text-light"></i></a>
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-text d-flex justify-content-between text-capitalize text-primary">
+                    <h5 id="store-item-name">Gestão de Produtos Entregues</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of single item-->
+    <!--single item-->
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets box-shadow">
+        <div class="card single-item">
+            <div class="img-container">
+                <img src="~/imagens/DonativoPapiApp.png" alt="Fotografia Registo de Doaçoes" class="card-img-top store-img">
+                <span class="store-item-icon">
+                    <a asp-controller="Doacaos" asp-action="Index"><i class="fas fa-gift text-light"></i></a>
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-text d-flex justify-content-between text-capitalize text-primary">
+                    <h5 id="store-item-name">Registo de Doações</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of single item-->
+    <!--single item-->
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets box-shadow">
+        <div class="card single-item">
+            <div class="img-container">
+                <img src="~/imagens/DatasDisponiveisPapiApp.png" alt="Fotografia Entrega Familias" class="card-img-top store-img">
+                <span class="store-item-icon">
+                    <a asp-controller="EntregaFamilias" asp-action="Index"><i class="fas fa-people-carry text-light"></i></a>
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-text d-flex justify-content-between text-capitalize text-primary">
+                    <h5 id="store-item-name">Registar Entrega a Família</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of single item-->
+    <!--single item-->
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets box-shadow">
+        <div class="card single-item">
+            <div class="img-container">
+                <img src="~/imagens/EventosPapiApp.png" alt="Fotografia Eventos" class="card-img-top store-img">
+                <span class="store-item-icon">
+                    <a asp-controller="Eventoes" asp-action="Index"><i class="fas fa-glass-cheers text-light"></i></a>
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-text d-flex justify-content-between text-capitalize text-primary">
+                    <h5 id="store-item-name">Eventos</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of single item-->
+    <!--single item-->
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets box-shadow">
+        <div class="card single-item">
+            <div class="img-container">
+                <img src="~/imagens/InscricoesPapiApp.png" alt="Fotografia Inscrição Eventos" class="card-img-top store-img">
+                <span class="store-item-icon">
+                    <a asp-controller="Inscricoes" asp-action="Index"><i class="fas fa-file-signature text-light"></i></a>
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-text d-flex justify-content-between text-capitalize text-primary">
+                    <h5 id="store-item-name">Gerir Inscrições Eventos</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of single item-->
+    <!--single item-->
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets box-shadow">
+        <div class="card single-item">
+            <div class="img-container">
+                <img src="~/imagens/Newsletter.jpg" alt="Fotografia Newsletter" class="card-img-top store-img">
+                <span class="store-item-icon">
+                    <a asp-controller="Newsletters" asp-action="Index"><i class="fas fa-envelope text-light"></i></a>
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-text d-flex justify-content-between text-capitalize text-primary">
+                    <h5 id="store-item-name">Newsletter</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of single item-->
+    <!--single item-->
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets box-shadow">
+        <div class="card single-item">
+            <div class="img-container">
+                <img src="~/imagens/Documentacao.png" alt="Fotografia Docs" class="card-img-top store-img">
+                <span class="store-item-icon">
+                    <a asp-controller="Home" asp-action="Docs"><i class="fa fa-file text-light"></i></a>
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-text d-flex justify-content-between text-capitalize text-primary">
+                    <h5 id="store-item-name">Documentação</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of single item-->
+    <!--single item-->
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets box-shadow">
+        <div class="card single-item">
+            <div class="img-container">
+                <img src="~/imagens/Utilizadores.png" alt="Fotografia Utilizadores" class="card-img-top store-img">
+                <span class="store-item-icon">
+                    <a asp-controller="Admin" asp-action="Index"><i class="fas fa-user-cog text-light"></i></a>
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-text d-flex justify-content-between text-capitalize text-primary">
+                    <h5 id="store-item-name">Gerir Utilizadores</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of single item-->
+    <!--single item-->
+    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets box-shadow">
+        <div class="card single-item">
+            <div class="img-container">
+                <img src="~/imagens/Roles.png" alt="Fotografia Roles" class="card-img-top store-img">
+                <span class="store-item-icon">
+                    <a asp-controller="Role" asp-action="Index"><i class="fas fa-user-tag text-light"></i></a>
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="card-text d-flex justify-content-between text-capitalize text-primary">
+                    <h5 id="store-item-name">Gerir Roles</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end of single item-->
+</div>
+
+
+<div>
+    <small>Data de última atualização: @ViewBag.date</small>
+</div>

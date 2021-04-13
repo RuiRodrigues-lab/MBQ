@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="jumbotron jumbotron-index">
+    <h1 class="text-primary text-light">Movimento Bebé Quentinho?</h1>
+    <h4 class="lead text-light">O Movimento Bebé Quentinho (MBQ) emana do Agrupamento em São Sebastião - Setúbal do Corpo Nacional de Escutas (CNE). Este movimento consiste em dar apoio às necessidades básicas de crianças até 6 anos de idade.</h4>
+    <br />
+    <div class=" row">
+        <div class="col-4">
+            <a class="btn btn-outline-light text-capitalize text-light p-2 btn-black" href="https://www.facebook.com/Movimentobq" target="_blank"> <img src="~/imagens/LogoIcoBola.ico" alt="Logotipo Papi" /> página oficial</a>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-4 align-content-end">
+            <div class="container py-2">
+                <div class="row">
+                    <div class="input-group col-md-8">
+                        <input class="form-control py-2" type="search" value="Pesquisa" id="example-search-input">
+                        <span class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+        <li data-target="#demo" data-slide-to="3"></li>
+    </ul>
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="img-fluid" src="~/imagens/QuartaCampanha.jpg" alt="4º campanhas">
+        </div>
+        <div class="carousel-item">
+            <img class="img-fluid" src="~/imagens/TerceiraCampanha.jpg" alt="3º campanha">
+        </div>
+        <div class="carousel-item">
+            <img class="img-fluid" src="~/imagens/SegundaCampanha.jpg" alt="2º campanha">
+        </div>
+        <div class="carousel-item">
+            <img class="img-fluid" src="~/imagens/PrimeiraCampanha.jpg" alt="1º campanha">
+        </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+
+</div>
+<br />
+<div class="row">
+    <div class="col-md-6 col-lg-6 col-sm-12 text-center ">
+        <!--Video iframes no lado esquerdo da pagina por baixo da div em cima-->
+        <iframe width="530" height="315" src="https://www.youtube.com/embed/BHk0iSbsdPk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="col-md-6 col-lg-6 col-sm-12 text-center">
+        <!--facebook feeder do lado direito-->
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMovimentobq&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    </div>
+</div>
+
+<div>
+    <small>Data de última atualização: @ViewBag.date</small>
+</div>

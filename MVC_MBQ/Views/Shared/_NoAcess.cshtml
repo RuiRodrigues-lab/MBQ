@@ -1,0 +1,20 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Sem acesso";
+}
+<div class="" style="text-align: center">
+    <h1 class="text-danger">Não têm permissão para aceder a esta Página.</h1>
+
+    <img src="~/imagens/SemAcessoPolicia.jpg" alt="Polícia" width="500px" height="500px"/>
+    <br />
+    @if (Model.ShowRequestId)
+    {
+        <label style="text-align: center">
+            <code>@Model.RequestId</code>
+        </label>
+    }
+    <hr />
+    
+    <a href="/Identity/Account/Login" type="button" class="btn btn-primary">Iniciar Sessão</a>
+    <a href="/Home/Index" type="button" class="btn btn-primary">Continuar a navegar</a>
+</div>

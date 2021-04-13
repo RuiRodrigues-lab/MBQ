@@ -1,0 +1,108 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>aspnet-MVC_MBQ-9766DBF7-E008-47AD-8EB2-7B3878E24123</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/6f3e775d-164d-49a5-8ab0-c0131762e999/resourcegroups/MovimentoBebeQuentinho/providers/Microsoft.Insights/components/MVC_MBQ</ApplicationInsightsResourceId>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\AgendarDoacao\**" />
+    <Compile Remove="Views\ANTIGOAgendarDoacao\**" />
+    <Compile Remove="Views\ANTIGODoador\**" />
+    <Compile Remove="Views\ANTIGODonativo\**" />
+    <Compile Remove="Views\ANTIGOFamilia\**" />
+    <Compile Remove="Views\ANTIGOMensagemRecebida\**" />
+    <Compile Remove="Views\ANTIGONovasCampanhas\**" />
+    <Compile Remove="Views\ANTIGOVoluntarios\**" />
+    <Compile Remove="Views\Doador\**" />
+    <Compile Remove="Views\Donativo\**" />
+    <Compile Remove="wwwroot\recursos\**" />
+    <Content Remove="Views\AgendarDoacao\**" />
+    <Content Remove="Views\ANTIGOAgendarDoacao\**" />
+    <Content Remove="Views\ANTIGODoador\**" />
+    <Content Remove="Views\ANTIGODonativo\**" />
+    <Content Remove="Views\ANTIGOFamilia\**" />
+    <Content Remove="Views\ANTIGOMensagemRecebida\**" />
+    <Content Remove="Views\ANTIGONovasCampanhas\**" />
+    <Content Remove="Views\ANTIGOVoluntarios\**" />
+    <Content Remove="Views\Doador\**" />
+    <Content Remove="Views\Donativo\**" />
+    <Content Remove="wwwroot\recursos\**" />
+    <EmbeddedResource Remove="Views\AgendarDoacao\**" />
+    <EmbeddedResource Remove="Views\ANTIGOAgendarDoacao\**" />
+    <EmbeddedResource Remove="Views\ANTIGODoador\**" />
+    <EmbeddedResource Remove="Views\ANTIGODonativo\**" />
+    <EmbeddedResource Remove="Views\ANTIGOFamilia\**" />
+    <EmbeddedResource Remove="Views\ANTIGOMensagemRecebida\**" />
+    <EmbeddedResource Remove="Views\ANTIGONovasCampanhas\**" />
+    <EmbeddedResource Remove="Views\ANTIGOVoluntarios\**" />
+    <EmbeddedResource Remove="Views\Doador\**" />
+    <EmbeddedResource Remove="Views\Donativo\**" />
+    <EmbeddedResource Remove="wwwroot\recursos\**" />
+    <None Remove="Views\AgendarDoacao\**" />
+    <None Remove="Views\ANTIGOAgendarDoacao\**" />
+    <None Remove="Views\ANTIGODoador\**" />
+    <None Remove="Views\ANTIGODonativo\**" />
+    <None Remove="Views\ANTIGOFamilia\**" />
+    <None Remove="Views\ANTIGOMensagemRecebida\**" />
+    <None Remove="Views\ANTIGONovasCampanhas\**" />
+    <None Remove="Views\ANTIGOVoluntarios\**" />
+    <None Remove="Views\Doador\**" />
+    <None Remove="Views\Donativo\**" />
+    <None Remove="wwwroot\recursos\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\ANTIGOAgendarDoacaoController.cs" />
+    <Compile Remove="Controllers\ANTIGODoadorController.cs" />
+    <Compile Remove="Controllers\ANTIGODonativoController.cs" />
+    <Compile Remove="Controllers\ANTIGOFamiliaController.cs" />
+    <Compile Remove="Controllers\ANTIGOMensagemRecebidaController.cs" />
+    <Compile Remove="Controllers\ANTIGONovasCampanhasController.cs" />
+    <Compile Remove="Controllers\ANTIGOVoluntariosController.cs" />
+    <Compile Remove="Models\ANTIGODataDoacao.cs" />
+    <Compile Remove="Models\ANTIGODoador.cs" />
+    <Compile Remove="Models\ANTIGODonativo.cs" />
+    <Compile Remove="Models\ANTIGOEscolhaDataDoacao.cs" />
+    <Compile Remove="Models\ANTIGOEscolhaDataDoacaoDoador.cs" />
+    <Compile Remove="Models\ANTIGOMensagemRecebida.cs" />
+    <Compile Remove="Models\ANTIGOModeloFormulario.cs" />
+    <Compile Remove="Models\ANTIGONovasCampanhas.cs" />
+    <Compile Remove="Models\ANTIGORepository.cs" />
+    <Compile Remove="Models\Doador.cs" />
+    <Compile Remove="Models\Donativo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Home\JoaoSilva.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\OQueDoar\Index.cshtml" />
+    <None Include="Views\OQueDoar\OQueDoar.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Castle.Core" Version="4.4.1" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.17.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="5.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+</Project>

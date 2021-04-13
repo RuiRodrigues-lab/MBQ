@@ -1,0 +1,54 @@
+﻿@model MVC_MBQ.Models.Doacao
+
+@{
+    ViewData["Title"] = "Editar Doação";
+}
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>  @Html.ActionLink("PapiApp", "PapiApp", "Home") >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+
+<h1>Editar doação</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="DataDoacao" class="control-label">Data da Doação</label>
+                <input asp-for="DataDoacao" class="form-control" />
+                <span asp-validation-for="DataDoacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventoID" class="control-label">Evento</label>
+                <select asp-for="EventoID" class="form-control" asp-items="ViewBag.EventoID"></select>
+                <span asp-validation-for="EventoID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VoluntarioID" class="control-label">Voluntario</label>
+                <select asp-for="VoluntarioID" class="form-control" asp-items="ViewBag.VoluntarioID"></select>
+                <span asp-validation-for="VoluntarioID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar a Lista de Doações</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,48 @@
+﻿@model MVC_MBQ.Models.Doacao
+
+@{
+    ViewData["Title"] = "Apagar Doação";
+}
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>   @Html.ActionLink("PapiApp", "PapiApp", "Home") >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+<h1>Apagar</h1>
+
+<h3>Tens a certeza que queres apagar esta doação?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Data de Doação
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataDoacao)
+        </dd>
+        <dt class="col-sm-2">
+            Nome de Evento
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Evento.NomeEvento)
+        </dd>
+        <dt class="col-sm-2">
+            Nome de Voluntário
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Voluntario.Nome)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Apagar" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar a Lista de Doações</a>
+    </form>
+</div>

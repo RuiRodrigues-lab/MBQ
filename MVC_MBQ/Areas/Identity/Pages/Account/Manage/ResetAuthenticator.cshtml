@@ -1,0 +1,24 @@
+﻿@page
+@model ResetAuthenticatorModel
+@{
+    ViewData["Title"] = "Alterar chave do autenticador";
+    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<h4>@ViewData["Title"]</h4>
+<div class="alert alert-warning" role="alert">
+    <p>
+        <span class="glyphicon glyphicon-warning-sign"></span>
+        <strong>Se tu alterares a tua chave de autenticação, a tua aplicação de autenticação não vai funcionar até tu configurares.</strong>
+    </p>
+    <p>
+        Este processo desactiva o A2F até tu verificares a tua aplicação de autenticação.
+        Se tu não completares a configuração da tua aplicação de autenticação, podes perder acesso a tua conta.
+    </p>
+</div>
+<div>
+    <form id="reset-authenticator-form" method="post" class="form-group">
+        <button id="reset-authenticator-button" class="btn btn-danger" type="submit">Alterar chave de autenticação</button>
+    </form>
+</div>

@@ -1,0 +1,93 @@
+﻿@model MVC_MBQ.Models.Evento
+
+@{
+    ViewData["Title"] = "Criar novo Evento";
+}
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>  @Html.ActionLink("PapiApp", "PapiApp", "Home") >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+
+<h1>Criar novo evento</h1>
+<h2>Todos os campos são de preenchimento obrigatório</h2>
+<hr />
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label asp-for="DataEvento" class="control-label">Data do Evento</label>
+                <input asp-for="DataEvento" class="form-control" required />
+                <span asp-validation-for="DataEvento" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="NomeEvento" class="control-label">Nome do Evento</label>
+                <input asp-for="NomeEvento" class="form-control" required />
+                <span asp-validation-for="NomeEvento" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <div class="form-group">
+                <label asp-for="Telemovel" class="control-label">Telemóvel</label>
+                <input asp-for="Telemovel" class="form-control" required />
+                <span asp-validation-for="Telemovel" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Email</label>
+                <input asp-for="Email" class="form-control" required />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label">Descrição</label>
+                <input asp-for="Descricao" class="form-control" required />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Criar Evento" class="btn btn-primary" />
+    </div>
+</form>
+
+
+<div>
+    <a asp-action="Index">Voltar à Lista de Eventos</a>
+</div>
+<div>
+    <small>
+        * Ao clicar em criar significa que o titular de dados está a autorizar que os seus dados sejam tratados para as finalidades referidas, tomando conhecimento da Política de Privacidade.
+        No caso de se tratar de dados pessoais de menores de 12 anos apenas se poderá efetuar tratamento no caso de consentimento dado pelo progenitor ou tutor.
+        Caso o titular não autorize utilização dos dados então não será possível realizar o pedido realizado ficando o mesmo sem efeito.
+    </small>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Movimento Bebe Quentinho</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="icon" href="@Url.Content("~/imagens/LogoIcoBola.ico")" />
+</head>
+<body>
+    
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/imagens/LogoPapiNavBar.png" alt="Logotipo Papi" /></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-primary" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-primary" href="#" id="navbardrop" data-toggle="dropdown"><i class="far fa-question-circle"></i> Quem Somos</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-primary" asp-controller="Home" asp-action="QuemSomos"><i class="far fa-question-circle"></i> Quem Somos</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-primary" asp-controller="Home" asp-action="Contactos"><i class="far fa-address-card"></i> Contactos</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-primary" asp-controller="Home" asp-action="Equipa"><i class="fas fa-users"></i> Equipa</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-primary" href="#" id="navbardrop" data-toggle="dropdown"><i class="fas fa-hand-holding-heart"></i> Como Ajudar</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-primary" asp-controller="Home" asp-action="ComoAjudar"><i class="fas fa-gift"></i> Como Ajudar</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-primary" asp-controller="Home" asp-action="CampanhaDonativos"><i class="fas fa-cubes"></i>Campanhas Donativos</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-primary" asp-controller="Home" asp-action="TiposDonativo"><i class="fas fa-hands"></i>Tipos de Donativo</a>
+                                @*<div class="dropdown-divider"></div>
+                                    <a class="dropdown-item text-primary" asp-controller="AgendarDoacao" asp-action="EscolhaDataDoacao"><i class="fas fa-gift"></i> Escolha Data Doação</a>*@
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-primary" asp-controller="OQueDoar" asp-action="OQueDoar"><i class="fas fa-gifts"></i> O Que Doar?</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary" asp-area="" asp-controller="Home" asp-action="PapiApp"><i class="fas fa-desktop"></i> Pápi Api</a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container corpo">
+        <main role="main" class="pb-3">
+            <partial name="_CookieConsentPartial" />
+            @RenderBody()
+        </main>
+    </div>
+
+    @*Botão Contactar*@
+    <div class="container-fluid">
+        <div class="container-box rotated">
+            <button type="button" class="btn btn-info btn-lg turned-button" data-toggle="modal" data-target="#myModal">Contacte-nos</button>
+        </div>
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-primary text-light">Envia a tua mensagem</h4>
+                        <button type="button" class="close" data-dismiss="modal"><i class="fas fa-times-circle"></i></button>
+                    </div>
+                    <div class="modal-body ">
+                        @*Aqui podemos meter o formulario que quisermos que isto vai sempre funcionar, pode ter classes amais*@
+                        <!--<form role="form" method="post" id="reused_form">-->
+                        @*
+                            <p> Envie a sua mensagem no formulario em baixo e iremos responder assim que possivel.</p>
+                            <div class="form-group">
+                                <label for="name"> Nome:</label>
+                                <input type="text" class="form-control" id="name" name="name" required maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label for="email"> Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" required maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label for="name"> Mensagem:</label>
+                                <textarea class="form-control" type="textarea" name="message" id="message" placeholder="A sua mensagem aqui..." maxlength="6000" rows="7"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-lg btn-success btn-block" id="btnContactUs">Enviar &rarr;</button>
+                        *@
+                        <!--</form>-->
+                        <form class="jotform-form" action="https://submit.jotformeu.com/submit/210535891363053/" method="post"
+                              name="form_210535891363053" id="210535891363053" accept-charset="utf-8" autocomplete="on">
+                            <input type="hidden" name="formID" value="210535891363053" />
+                            <input type="hidden" id="JWTContainer" value="" />
+                            <input type="hidden" id="cardinalOrderNumber" value="" />
+                            <div role="main" class="form-all">
+                                <div class="form-section page-section">
+                                    <div class="form-line row" data-type="control_textbox" id="id_4">
+                                        <label class="form-label form-label-left form-label-auto col-sm-2" id="label_4" for="input_4"> <h6 class="text-primary text-light">Nome</h6> </label>
+                                        <div id="cid_4" class="form-input col-sm-10" data-layout="half">
+                                            <input type="text" id="input_4" name="q4_nome" data-type="input-textbox" class="form-textbox" value="" style='min-width: 300px; width: 100%;' data-component="textbox" aria-labelledby="label_4" />
+                                        </div>
+                                    </div>
+                                    <div class="form-line row" data-type="control_email" id="id_3">
+                                        <label class="form-label form-label-left form-label-auto col-sm-2" id="label_3" for="input_3"><h6 class="text-primary text-light"> E-mail</h6> </label>
+                                        <div id="cid_3" class="form-input mt-2 col-sm-10" data-layout="half">
+                                            <span class="form-sub-label-container" style="vertical-align:top">
+                                                <input type="email" id="input_3" name="q3_email" class="form-textbox validate[Email]" style='min-width: 300px; width: 100%;' value="" data-component="email" aria-labelledby="label_3 sublabel_input_3" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                    @*Caixa de texto Mensagem*@
+                                    <div class="form-line" data-type="control_textarea" id="id_5">
+                                        <label class="form-label form-label-left form-label-auto" id="label_5" for="input_5"><h6 class="text-primary text-light"> Mensagem</h6> </label>
+                                        <div id="cid_5" class="form-input">
+                                            <textarea id="input_5" class="form-textarea" name="q5_mensagem" style='min-width: 300px; width: 100%; min-height: 200px;' data-component="textarea"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-line" data-type="control_button" id="id_2">
+                                        <div id="cid_2" class="form-input-wide" data-layout="full">
+                                            <div data-align="auto"
+                                                 class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
+                                                <button id="input_2" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField btn btn-info " data-component="button" data-content="" formtarget="_blank">
+                                                    Enviar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <small>
+                                            * Ao clicar em criar significa que o titular de dados está a autorizar que os seus dados sejam tratados para as finalidades referidas, tomando conhecimento da Política de Privacidade.
+                                            No caso de se tratar de dados pessoais de menores de 12 anos apenas se poderá efetuar tratamento no caso de consentimento dado pelo progenitor ou tutor.
+                                            Caso o titular não autorize utilização dos dados então não será possível realizar o pedido realizado ficando o mesmo sem efeito.
+                                        </small>
+                                    </div>
+                                    <div style="display:none">
+                                        Should be Empty:
+                                        <input type="text" name="website" value="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="210535891363053" />
+                            <script type="text/javascript">
+                                var all_spc = document.querySelectorAll("form[id='210535891363053'] .si" + "mple" + "_spc");
+                                for (var i = 0; i < all_spc.length; i++) {
+                                    all_spc[i].value = "210535891363053-210535891363053";
+                                }
+                            </script>
+                        </form>
+                        @*
+                            <div id="success_message" style="width:100%; height:100%; display:none; "> <h3>A sua mensagem foi enviada com sucesso!</h3> </div>
+                            <div id="error_message" style="width:100%; height:100%; display:none; "> <h3>Error</h3> Pedimos deculpa, mas a mensagem possui um erro. </div>
+                        *@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*Botao para Bot*@
+    <div class="container">
+        <div class="container-box-BOT rotated">
+            <button type="button" class="btn btn-primary btn-lg turned-button" data-toggle="modal" data-target="#BOTModal">Papi Responde</button>
+        </div>
+        <!-- Modal -->
+        <div id="BOTModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-primary text-light">Coloca as tuas dúvidas</h4>
+                        <button type="button" class="close" data-dismiss="modal"><i class="fas fa-times-circle"></i></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe src='https://webchat.botframework.com/embed/MBQBot2?s=h31SVfjfYPM.EYOZ_VszilEyCE4Pz8V6OHjSmnsxEMlTybDfdWF2jmA' style='min-width: 300px; width: 100%; min-height: 400px;'></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer fixed-bottom container-fluid">
+        <footer class="border-top">
+            <div class="text-center">
+                <a asp-controller="Home" asp-action="Index" title="Voltar ao Topo"><i class="fas fa-arrow-circle-up"></i></a>
+            </div>
+
+            <div class="row">
+                <div class="col-sm align-items-center">
+                    <a asp-controller="Home" asp-action="Index">
+                        <img class="img rounded" src="~/imagens/LogoPapi2.png" alt="Fotografia Papi" style="width:60%">
+                    </a>
+                </div>
+                <div class="col-sm">
+                    <ul>
+                        <li>
+                            <div class="text-center text-white mt-4 p-2">
+                                <h5>
+                                    Ligue-se a nós
+                                    <a class="email" href="mailto: movimentobq59@gmail.com" target="_blank" title="Link para Email"> <i class="fas fa-envelope"></i></a>
+                                    <a href="https://www.facebook.com/Movimentobq/" title="Link para Facebook"><i class="fab fa-facebook-square"></i></a>
+                                    <a href="#" title="Link para Instagram"><i class="fab fa-instagram-square"></i></a>
+                                    <a href="#" title="Link para Tiktok"><i class="fab fa-tiktok"></i></a>
+                                </h5>
+                            </div>
+                        </li>
+                        <li class="mt-2">
+                            2910-092 Setúbal | Portugal
+                        </li>
+                        <li>
+                            Corpo Nacional de Escutas - - Agrupamento 59 São Sebastião
+                        </li>
+                        <li>
+                            Largo S. Domingos. Igreja de São Sebastião
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-sm text-center align-content-center mt-5 p-2">
+                    
+                    <h6 class="text-white">Adere à nossa newsletter</h6>
+                    <form asp-controller="Newsletters" asp-action="Create" method="post">
+                        @*<label class="text-light">E-mail:</label>*@                       
+                        <input type="email" id="email" name="email" required="required" placeholder="E-mail" />
+                        <button class="btn btn-info" type="submit">Subscrever Newsletter</button>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <a class="castanho" href="https://chrome.google.com/webstore/detail/high-contrast/djcfdncoelnlbldjfhinnjlhdjlikmph?hl=pt-PT" target="_blank" title="Extensão para visualizar com elevado contraste no google chrome"><i class="fab fa-chrome"></i> Extensão Google para Visualizar com elevado Contraste</a>
+            </div>
+            <div class="row  justify-content-center  text-white text-light">
+                <p class="castanho"><small>&copy; Movimento Bebé Quentinho 2021. All right reserved <a class="castanho" asp-area="" asp-controller="Home" asp-action="Privacidade">| Política de Privacidade |</a></small> </p>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @* Font Awesome 5 : https://fontawesome.com/ *@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js" integrity="sha512-UwcC/iaz5ziHX7V6LjSKaXgCuRRqbTp1QHpbOJ4l1nw2/boCfZ2KlFIqBUA/uRVF0onbREnY9do8rM/uT/ilqw==" crossorigin="anonymous"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

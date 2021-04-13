@@ -1,0 +1,25 @@
+﻿@page
+@model Disable2faModel
+@{
+    ViewData["Title"] = "Desligar a autenticação duplo factor (A2F)";
+    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<h2>@ViewData["Title"]</h2>
+
+<div class="alert alert-warning" role="alert">
+    <p>
+        <strong>Esta acção apenas desliga o A2F.</strong>
+    </p>
+    <p>
+        Desligar o A2F não atlera a chaves usadas nas aplicações de autenticação. Se deseja mudar as chaves 
+        usadas na a aplicação de autenticação deveria<a asp-page="./ResetAuthenticator">alterar as chaves de autenticação.</a>
+    </p>
+</div>
+
+<div>
+    <form method="post" class="form-group">
+        <button class="btn btn-danger" type="submit">Desligar o A2F</button>
+    </form>
+</div>

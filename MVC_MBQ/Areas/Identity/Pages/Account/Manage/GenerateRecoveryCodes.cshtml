@@ -1,0 +1,27 @@
+﻿@page
+@model GenerateRecoveryCodesModel
+@{
+    ViewData["Title"] = "Gerar codigos de recuperação da autenticação duplo factor (A2F)";
+    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<h4>@ViewData["Title"]</h4>
+<div class="alert alert-warning" role="alert">
+    <p>
+        <span class="glyphicon glyphicon-warning-sign"></span>
+        <strong>Coloca estes codigos num sitio seguro.</strong>
+    </p>
+    <p>
+        Se perderes o teu dispositivo e não tiveres codigos de recuperação, iras perder acesso a tua conta.
+    </p>
+    <p>
+        Gerar novos codigos não altera as chaves usadas na aplicação de autenticação. Se tu alterares a chave 
+        usada em uma aplicação de autenticação tu deveras <a asp-page="./ResetAuthenticator">alterar as tuas chaves.</a>
+    </p>
+</div>
+<div>
+    <form method="post" class="form-group">
+        <button class="btn btn-danger" type="submit">Gerar codigo de recuperação</button>
+    </form>
+</div>

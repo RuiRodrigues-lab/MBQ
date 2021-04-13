@@ -1,0 +1,62 @@
+﻿@model IEnumerable<MVC_MBQ.Models.Evento>
+
+@{
+    ViewData["Title"] = "Eventos";
+}
+
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>   @Html.ActionLink("PapiApp", "PapiApp", "Home") >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+
+<h1>Lista de Eventos</h1>
+
+<p>
+    <a asp-action="Create">Criar Novo Evento</a>
+</p>
+<div class="container mb-3">
+    @foreach (var evento in Model)
+    {
+        <div class="row row-striped ">
+            <div class="col-2 text-right">
+                <h1 class="display-4"><span class="badge badge-secondary">@evento.DataEvento.Day</span></h1>
+                <h2>Mês: @evento.DataEvento.Month</h2>
+            </div>
+            <div class="col-10">
+                <h3 class="text-uppercase"><strong>@evento.NomeEvento</strong></h3>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> @evento.DataEvento.DayOfWeek</li>
+                    <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> @evento.DataEvento.Hour</li>
+                    <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> @evento.NomeEvento</li>
+                </ul>
+                <p>@evento.Descricao</p>
+                <a asp-action="Edit" asp-route-id="@evento.ID">Editar</a> |
+                <a asp-action="Details" asp-route-id="@evento.ID">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@evento.ID">Apagar</a>
+            </div>
+        </div>
+    }
+</div>
+@*<input type="button" class="btn btn-info" onclick="CallPrint('divPrnt')" value="Imprimir Calendário" />*@
+
+<input type="button" class="btn btn-info" onclick="javascript:window.print()" value="Imprimir Página" />
+
+<script>
+
+    function CallPrint(strid) {
+        var prtContent = document.getElementById(strid);
+        var WinPrint = window.open('', '', 'letf=100,top=100,width=600,height=600');
+        WinPrint.document.write(prtContent.innerHTML);
+        WinPrint.document.close();
+        WinPrint.focus();
+        WinPrint.print();
+        //WinPrint.close()
+    }
+</script>

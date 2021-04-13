@@ -1,0 +1,74 @@
+﻿
+@{ ViewData["title"] = "O Que Doar";
+}
+
+@model MVC_MBQ.Models.EmailFormModel
+
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:> 
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+
+<h1>O Que Posso Doar?</h1>
+<h2>Com que produtos posso ajudar neste momento, tendo em conta as necessidades</h2>
+
+<hr />
+
+
+<form class="pb-2" asp-action="OQueDoar" method="post">
+    <div asp-validation-summary="All"></div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label asp-for=@Model.FromName>Nome:</label>
+                <input class="form-control" asp-for=@Model.FromName />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label asp-for=@Model.FromEmail>E-mail</label>
+                <input class="form-control" asp-for=@Model.FromEmail />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label asp-for="@Model.Subject" class="control-label">Assunto:</label>
+                <input class="form-control" type="text" asp-for=@Model.Subject value="O que Doar?" readonly>
+                <span class="validity"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="@Model.Message" class="control-label">Mensagem:</label>
+                <input type="text" asp-for="@Model.Message" class="form-control" required />
+                <span class="validity"></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input class="btn btn-primary" type="submit" value="Pedido de Informação" />
+    </div>
+</form>
+
+
+<div>
+    <small>
+        * Ao clicar em Pedido de Informação significa que o titular de dados está a autorizar que os seus dados sejam tratados para as finalidades referidas, tomando conhecimento da Política de Privacidade.
+        No caso de se tratar de dados pessoais de menores de 12 anos apenas se poderá efetuar tratamento no caso de consentimento dado pelo progenitor ou tutor.
+        Caso o titular não autorize utilização dos dados então não será possível realizar o pedido realizado ficando o mesmo sem efeito.
+    </small>
+</div>

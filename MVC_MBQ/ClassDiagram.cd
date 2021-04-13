@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="MVC_MBQ.Models.AppIdentityDbContext">
+    <Position X="3.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AppIdentityDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.AppMovimentoBQDbContext">
+    <Position X="5.5" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AEIIAAEgCAABAEAIAAAAAAAAEAACECAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AppMovimentoBQDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.AppUser">
+    <Position X="21.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AppUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.Categoria">
+    <Position X="2" Y="9.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAgAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Categoria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.Doacao">
+    <Position X="16.25" Y="9.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAIgAAgAAAAAAAAAgAAAAAAAAQAAAAEAAA=</HashCode>
+      <FileName>Models\Doacao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.EmailFormModel">
+    <Position X="0.5" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAEAgAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Models\EmailFormModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.EntregaFamilia">
+    <Position X="12.75" Y="9.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAgAAIAAAAAAAAAAAAAAEAAAAIAAAAAAA=</HashCode>
+      <FileName>Models\EntregaFamilia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.ErrorViewModel">
+    <Position X="9" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ErrorViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.Evento" BaseTypeListCollapsed="true">
+    <Position X="8" Y="12" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgACABgEQAAAAAAAAAAAAAAEAAAACAAAAAIAA=</HashCode>
+      <FileName>Models\Evento.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MVC_MBQ.Models.Familia">
+    <Position X="2" Y="12" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Models\Familia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.Inscricao">
+    <Position X="10.5" Y="12" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIgABAAAAAAAAAAgAAAAAAAAQAAAAEAAA=</HashCode>
+      <FileName>Models\Inscricao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.MembroFamilia">
+    <Position X="5.5" Y="12" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAASABgAAAAAQAAACAAAIAAAEAAAAIAAEBAAQ=</HashCode>
+      <FileName>Models\MembroFamilia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.MyConvertHttpClient">
+    <Position X="8" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAABAAAAAQ=</HashCode>
+      <FileName>Models\MyConvertHttpClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.Newsletter">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAgAAAAAEAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Newsletter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.OQueDoar">
+    <Position X="10.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAIAAAAAAAAAAAAAAAAAEEAAAA=</HashCode>
+      <FileName>Models\OQueDoar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.Produto">
+    <Position X="4.25" Y="9.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAhAAoBAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Produto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.ProdutoDoado">
+    <Position X="8" Y="9.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAgAAAAAAAAAAABAAAAAAQAAAIAAE=</HashCode>
+      <FileName>Models\ProdutoDoado.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.ProdutoEntregue">
+    <Position X="10" Y="9.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAIIAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAQAAAIAAE=</HashCode>
+      <FileName>Models\ProdutoEntregue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.RequestAPI">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Models\RequestAPI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.ResponseAPI">
+    <Position X="5.25" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAEAAAAAAgAAAAAAAQAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ResponseAPI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.RoleEdit">
+    <Position X="11.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Models\RoleEdit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.RoleModification">
+    <Position X="14.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAEAAAAAAAAAAAAAAAACAAAEAAAAAA=</HashCode>
+      <FileName>Models\RoleModification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.TwoFactor">
+    <Position X="17" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Models\TwoFactor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.User">
+    <Position X="19.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAQAAAAAAAAA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.ViewModelNovaDoacao">
+    <Position X="15" Y="7" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAABAAAAgAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ViewModelNovaDoacao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.ViewModelNovaEntregaFamilia">
+    <Position X="12.25" Y="7" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AEIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ViewModelNovaEntregaFamilia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.ViewModelNovaInscricao">
+    <Position X="2" Y="7" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Models\ViewModelNovaInscrição.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.ViewModelNovoMembroFamilia">
+    <Position X="4.5" Y="7" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAIAAAA=</HashCode>
+      <FileName>Models\ViewModelNovoMembroFamilia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.ViewModelNovoProduto">
+    <Position X="7.25" Y="7" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Models\ViewModelNovoProduto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.ViewModelNovoVoluntario">
+    <Position X="9.75" Y="7" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAQAAAAAAAA=</HashCode>
+      <FileName>Models\ViewModelNovoVoluntario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MVC_MBQ.Models.Voluntario">
+    <Position X="19.5" Y="9.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAgASABgEAACAQAAACAAAIAAAAAAAAAAAEBAAA=</HashCode>
+      <FileName>Models\Voluntario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

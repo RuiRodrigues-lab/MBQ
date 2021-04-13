@@ -1,0 +1,106 @@
+﻿@model MVC_MBQ.Models.ViewModelNovaDoacao
+
+@{
+    ViewData["Title"] = "Adicionar Doação";
+}
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>   @Html.ActionLink("PapiApp", "PapiApp", "Home") >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+
+<h1>Criar nova doação</h1>
+<h2>Todos os campos são de preenchimento obrigatório</h2>
+
+<hr />
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="@Model.Doacao.EventoID" class="control-label">Evento</label>
+                <select asp-for="@Model.Doacao.EventoID" class="form-control" asp-items="ViewBag.EventoID" required="required">
+
+                    @foreach (Evento evento in Model.Eventos)
+                    {
+                        <option value="@evento.ID">@evento.NomeEvento</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label asp-for="@Model.Doacao.VoluntarioID" class="control-label">Voluntario</label>
+                <select asp-for="@Model.Doacao.VoluntarioID" class="form-control" required="required">
+                    @foreach (Voluntario voluntario in Model.Voluntarios)
+                    {
+                        <option value="@voluntario.ID">@voluntario.Nome</option>
+                    }
+
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label asp-for="@Model.Doacao.DataDoacao" class="control-label">Data Doação</label>
+                <input asp-for="@Model.Doacao.DataDoacao" class="form-control" required="required" />
+                <span class="validity"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        @for (var i = 0; i < Model.Doacao.ProdutosDoados.Count; i++)
+        {
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Produto Doado</label>
+                    <select asp-for="@Model.Doacao.ProdutosDoados[i].ProdutoID" class="form-control" required="required">
+                        @foreach (Produto produto in Model.Produtos)
+                        {
+                            <option value="@produto.ID">@produto.NomeProduto</option>
+                        }
+
+                    </select>
+                </div>
+
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label asp-for="@Model.Doacao.ProdutosDoados[i].Quantidade" class="control-label">Quantidade</label>
+                        <input asp-for="@Model.Doacao.ProdutosDoados[i].Quantidade" class="form-control" required="required" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="row">
+        <div class="col-sm-6 form-group">
+            <input type="submit" value="Doar Produto" class="btn btn-primary" />
+        </div>
+        <div class="col-sm-6 form-group">
+            <input type="submit" asp-action="AddProdutoDoado" value="Adicionar Novo Produto" class="btn btn-primary" />
+        </div>
+    </div>
+
+</form>
+   
+
+<div>
+    <a asp-action="Index">Voltar a Lista de Doações</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,74 @@
+﻿@model MVC_MBQ.Models.ViewModelNovaInscricao
+
+@{
+    ViewData["Title"] = "Introduzir Inscrição";
+}
+
+
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>   @Html.ActionLink("PapiApp", "PapiApp", "Home")  >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+
+
+<h1>Criar Nova Inscrição</h1>
+<h2>Todos os campos são de preenchimento obrigatório</h2>
+<hr />
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label asp-for="@Model.Inscricao.DataInscrição" class="control-label">Data de Inscrição:</label>
+                <input type="date" asp-for="@Model.Inscricao.DataInscrição" class="form-control" asp-items="ViewBag.DataInscricao" required />
+                <span class="validity"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="@Model.Inscricao.EventoID" class="control-label">Evento:</label>
+                <select asp-for="@Model.Inscricao.EventoID" class="form-control" asp-items="ViewBag.EventoID" required>
+                    @foreach (Evento evento in Model.Eventos)
+                    {
+                        <option value="@evento.ID">@evento.NomeEvento</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label asp-for="@Model.Inscricao.VoluntarioID" class="control-label">Nome de Voluntario</label>
+                <select asp-for="@Model.Inscricao.VoluntarioID" class="form-control" asp-items="ViewBag.VoluntarioID" required>
+                    @foreach (Voluntario voluntario in Model.Voluntarios)
+                    {
+                        <option value="@voluntario.ID">@voluntario.Nome</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Inscrever" class="btn btn-primary" />
+    </div>
+</form>
+    
+
+<div>
+    <a asp-action="Index">Voltar à Lista de Inscrições</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

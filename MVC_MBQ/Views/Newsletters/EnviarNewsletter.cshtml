@@ -1,0 +1,52 @@
+﻿
+
+@{
+    ViewData["Title"] = "Enviar Newsletter";
+}
+<ol class="breadcrumb">
+    <li class="active">
+        @if (ViewContext.RouteData.Values["controller"] != "Home" && ViewContext.RouteData.Values["action"] != "Index")
+        {
+            @Html.ActionLink("Home", "Index", "Home") @:>   @Html.ActionLink("PapiApp", "PapiApp", "Home")  >  @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index")
+        }
+        > @ViewBag.Title
+    </li>
+</ol>
+@model MVC_MBQ.Models.EmailFormModel
+@{
+    ViewBag.Title = "Newsletter";
+}
+<h1>Newsletter</h1>
+<h2>Todos os campos são de preenchimento obrigatório</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EnviarNewsletter">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="@Model.Subject" class="control-label">Assunto:</label>
+                <input type="text" asp-for="@Model.Subject" class="form-control" required />
+                <span class="validity"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.FromName" class="control-label">Nome:</label>
+                <input type="text" asp-for="@Model.FromName" class="form-control" required />
+                <span class="validity"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.FromEmail" class="control-label">Email:</label>
+                <input type="email" asp-for="@Model.FromEmail" class="form-control" required />
+                <span class="validity"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Message" class="control-label">Mensagem:</label>
+                <input type="text" asp-for="@Model.Message" class="form-control" required />
+                <span class="validity"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Enviar mensagem" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+    
