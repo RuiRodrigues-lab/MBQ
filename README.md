@@ -9,7 +9,7 @@ Criação de uma Web App através do asp.net MVC para o [Movimento Bebe Quentinh
 5. [Rui Rodrigues](https://github.com/RuiRodrigues-lab)
 
 # Tecnologias utilizadas
-1. .net/c# (Entity Framework, ASP.net MVC, Web API)
+1. .net/c# (Entity Framework, ASP.net MVC)
 2. HTML5/CSS3/JS
 3. Bootstrap 4
 4. Jquery 3.5
